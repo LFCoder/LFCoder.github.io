@@ -196,10 +196,10 @@
 
       <div class="body-wrap">
   
-    <article id="[layout]-url编码" class="article article-type-[layout]" itemscope itemprop="blogPost">
+    <article id="[layout]-URL合法字符" class="article article-type-[layout]" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/02/url编码/" class="article-date">
+      <a href="/2016/06/02/URL合法字符/" class="article-date">
   	<time datetime="2016-06-02T01:59:25.000Z" itemprop="datePublished">2016-06-02</time>
 </a>
     </div>
@@ -213,7 +213,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/02/url编码/">url编码</a>
+      <a class="article-title" href="/2016/06/02/URL合法字符/">url编码</a>
     </h1>
   
 
@@ -225,11 +225,13 @@
         <p>最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考官方文档<a href="http://www.ietf.org/rfc/rfc3986.txt" target="_blank" rel="external">FRC3986</a>。当然国内也有把该文档进行翻译的中文版<a href="http://wiki.jabbercn.org/RFC3986#.E6.A0.87.E5.87.86.E5.8C.96.E5.92.8C.E6.AF.94.E8.BE.83" target="_blank" rel="external">FRC3986中文版</a></p>
 <h3 id="URL合法字符"><a href="#URL合法字符" class="headerlink" title="URL合法字符"></a>URL合法字符</h3><p>首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。<br>那么，URL合法字符包含哪些呢？</p>
 <ul>
-<li>uppercase and lowercase letters 即大小写字母，[a~z] 和A~Z</li>
+<li>[x] <em>uppercase and lowercase letters</em> 即大小写字母，<code>a~z</code> 和<code>A~Z</code></li>
+</ul>
+<ul>
 <li>decimal digits 即0~9</li>
 <li>hyphen </li>
 </ul>
-<h3 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h3><p>保留字符是用来分割URI组件的,如果URI数据中含有保留字符,那么</p>
+<h3 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h3><p>保留字符是用来分割URI组件的,如果URI数据中含有保留字符,那么就需要对保留字符进行编码</p>
 
       
     </div>
