@@ -852,13 +852,13 @@ a {
   font-size: 12px;
 }
 .body-wrap {
-  margin-bottom: 200px;
+  margin-bottom: 80px;
 }
 .article {
   margin: 30px;
   position: relative;
   border: 1px solid #ddd;
-  background: #fff;
+  background: #f7f8f2;
   -webkit-transition: all 0.2s ease-in;
 }
 .article.show {
@@ -974,10 +974,12 @@ a {
 }
 .article-entry p code,
 .article-entry li code {
-  padding: 1px 3px;
+  padding: 2px 4px;
   margin: 0 3px;
-  background: #ddd;
+  background: #d6dbdf;
   border: 1px solid #ccc;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   word-wrap: break-word;
   font-size: 14px;

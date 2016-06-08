@@ -9,22 +9,24 @@
   <meta name="description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考官方文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版
 URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
 
-[x] uppercase and lowerca">
+uppercase and lowercase l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="url编码">
-<meta property="og:url" content="http://lfcoder.github.io/2016/06/02/URL合法字符/index.html">
+<meta property="og:url" content="http://lfcoder.github.io/2016/06/02/url编码/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考官方文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版
 URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
 
-[x] uppercase and lowerca">
-<meta property="og:updated_time" content="2016-06-03T11:31:49.000Z">
+uppercase and lowercase l">
+<meta property="og:image" content="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png">
+<meta property="og:updated_time" content="2016-06-08T03:49:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="url编码">
 <meta name="twitter:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考官方文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版
 URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
 
-[x] uppercase and lowerca">
+uppercase and lowercase l">
+<meta name="twitter:image" content="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -204,10 +206,10 @@ URL合法字符首先，URL合法字符并不支持所有的字符。其次，UR
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="[layout]-URL合法字符" class="article article-type-[layout]" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="[layout]-url编码" class="article article-type-[layout]" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/02/URL合法字符/" class="article-date">
+      <a href="/2016/06/02/url编码/" class="article-date">
   	<time datetime="2016-06-02T01:59:25.000Z" itemprop="datePublished">2016-06-02</time>
 </a>
     </div>
@@ -244,13 +246,12 @@ URL合法字符首先，URL合法字符并不支持所有的字符。其次，UR
         <p>最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考官方文档<a href="http://www.ietf.org/rfc/rfc3986.txt" target="_blank" rel="external">FRC3986</a>。当然国内也有把该文档进行翻译的中文版<a href="http://wiki.jabbercn.org/RFC3986#.E6.A0.87.E5.87.86.E5.8C.96.E5.92.8C.E6.AF.94.E8.BE.83" target="_blank" rel="external">FRC3986中文版</a></p>
 <h3 id="URL合法字符"><a href="#URL合法字符" class="headerlink" title="URL合法字符"></a>URL合法字符</h3><p>首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。<br>那么，URL合法字符包含哪些呢？</p>
 <ul>
-<li>[x] <em>uppercase and lowercase letters</em> 即大小写字母，<code>a~z</code> 和<code>A~Z</code></li>
+<li><em>uppercase and lowercase letters</em> 即大小写字母，<code>a~z</code> 和<code>A~Z</code></li>
+<li><em>decimal digits</em> 即 <code>0~9</code></li>
+<li><em>hyphen, period, underscore, and tilde</em> 即 <code>-</code> <code>.</code> <code>_</code> <code>~</code>四个字符</li>
+<li><em>revserved characters</em> 即<code>:</code>  <code>/</code>  <code>?</code>  <code>#</code>  <code>[</code>  <code>]</code>  <code>@</code><br><code>!</code>  <code>$</code>  <code>&amp;</code>  <code>&#39;</code>  <code>(</code>  <code>)</code> <code>*</code>  <code>+</code>  <code>,</code>  <code>;</code>  <code>=</code></li>
 </ul>
-<ul>
-<li>decimal digits 即0~9</li>
-<li>hyphen </li>
-</ul>
-<h3 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h3><p>保留字符是用来分割URI组件的,如果URI数据中含有保留字符,那么就需要对保留字符进行编码</p>
+<h3 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h3><p>在URL合法字符集中,有一些字符被预留用于特定的作用–用来分割URI组件或者子组件,这些字符就是<em>reversved characters(保留字符)</em>。URL保留字符集在上面<br>一般的URI通常由<em>scheme</em>，<em>authority</em>，<em>path</em>，<em>query</em>，<em>fragment</em>几个components(组件)组成。例如：<br>  <img src="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png" alt="Snip20160608_1.png-24.7kB"></p>
 
       
     </div>
@@ -297,7 +298,7 @@ URL合法字符首先，URL合法字符并不支持所有的字符。其次，UR
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="URL合法字符" data-title="url编码" data-url="http://lfcoder.github.io/2016/06/02/URL合法字符/"></div>
+	<div class="ds-thread" data-thread-key="url编码" data-title="url编码" data-url="http://lfcoder.github.io/2016/06/02/url编码/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
