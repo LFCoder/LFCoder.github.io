@@ -6,26 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>url编码 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考官方文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版
+  <meta name="description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版，
 URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
 
-uppercase and lowercase l">
+uppercase and lowercase le">
 <meta property="og:type" content="article">
 <meta property="og:title" content="url编码">
 <meta property="og:url" content="http://lfcoder.github.io/2016/06/02/url编码/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考官方文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版
+<meta property="og:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版，
 URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
 
-uppercase and lowercase l">
+uppercase and lowercase le">
 <meta property="og:image" content="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png">
-<meta property="og:updated_time" content="2016-06-08T03:49:29.000Z">
+<meta property="og:updated_time" content="2016-06-12T08:17:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="url编码">
-<meta name="twitter:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考官方文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版
+<meta name="twitter:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版，
 URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
 
-uppercase and lowercase l">
+uppercase and lowercase le">
 <meta name="twitter:image" content="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -130,7 +130,7 @@ uppercase and lowercase l">
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a>
 					</div>
 				</section>
 				
@@ -243,15 +243,21 @@ uppercase and lowercase l">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考官方文档<a href="http://www.ietf.org/rfc/rfc3986.txt" target="_blank" rel="external">FRC3986</a>。当然国内也有把该文档进行翻译的中文版<a href="http://wiki.jabbercn.org/RFC3986#.E6.A0.87.E5.87.86.E5.8C.96.E5.92.8C.E6.AF.94.E8.BE.83" target="_blank" rel="external">FRC3986中文版</a></p>
+        <p>最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档<a href="http://www.ietf.org/rfc/rfc3986.txt" target="_blank" rel="external">FRC3986</a>。当然国内也有把该文档进行翻译的中文版<a href="http://wiki.jabbercn.org/RFC3986#.E6.A0.87.E5.87.86.E5.8C.96.E5.92.8C.E6.AF.94.E8.BE.83" target="_blank" rel="external">FRC3986中文版</a>，</p>
 <h3 id="URL合法字符"><a href="#URL合法字符" class="headerlink" title="URL合法字符"></a>URL合法字符</h3><p>首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。<br>那么，URL合法字符包含哪些呢？</p>
 <ul>
 <li><em>uppercase and lowercase letters</em> 即大小写字母，<code>a~z</code> 和<code>A~Z</code></li>
 <li><em>decimal digits</em> 即 <code>0~9</code></li>
 <li><em>hyphen, period, underscore, and tilde</em> 即 <code>-</code> <code>.</code> <code>_</code> <code>~</code>四个字符</li>
-<li><em>revserved characters</em> 即<code>:</code>  <code>/</code>  <code>?</code>  <code>#</code>  <code>[</code>  <code>]</code>  <code>@</code><br><code>!</code>  <code>$</code>  <code>&amp;</code>  <code>&#39;</code>  <code>(</code>  <code>)</code> <code>*</code>  <code>+</code>  <code>,</code>  <code>;</code>  <code>=</code></li>
+<li><em>revserved characters</em> 即保留字符<code>:</code>  <code>/</code>  <code>?</code>  <code>#</code>  <code>[</code>  <code>]</code>  <code>@</code><br><code>!</code>  <code>$</code>  <code>&amp;</code>  <code>&#39;</code>  <code>(</code>  <code>)</code> <code>*</code>  <code>+</code>  <code>,</code>  <code>;</code>  <code>=</code></li>
 </ul>
-<h3 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h3><p>在URL合法字符集中,有一些字符被预留用于特定的作用–用来分割URI组件或者子组件,这些字符就是<em>reversved characters(保留字符)</em>。URL保留字符集在上面<br>一般的URI通常由<em>scheme</em>，<em>authority</em>，<em>path</em>，<em>query</em>，<em>fragment</em>几个components(组件)组成。例如：<br>  <img src="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png" alt="Snip20160608_1.png-24.7kB"></p>
+<h3 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h3><p>在URL合法字符集中,有一些字符被预留用于特定的作用–用来分割URL组件或者子组件,这些字符就是<em>reversved characters(保留字符)</em>。URL保留字符集上面已给出这里不再赘述。<br>一般的URL通常由<em>scheme</em>，<em>authority</em>，<em>path</em>，<em>query</em>，<em>fragment</em>几个components(组件)组成。例如：<br>  <img src="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png" alt="Snip20160608_1.png-24.7kB"></p>
+<p>  那么<code>:</code> <code>/</code> <code>?</code> <code>#</code>都是用来分割组件的，不是URL数据(data)的一部分!</p>
+<h3 id="Percent-Encoding"><a href="#Percent-Encoding" class="headerlink" title="Percent-Encoding"></a>Percent-Encoding</h3><p>URL支持的合法的字符那么少，如果URL中出现了中文，特殊符号等这些不安全字符怎么办,解决的办法就是Percent-Encoding机制！<br>当代表URL的字符串中出现不合法字符,或者在URL的组件中出现保留字符作为组件数据,那么都需要对这些字符进行Percent-Encoding.<br>例如:<br><a href="http://wdluya.cn/文档/frc" target="_blank" rel="external">http://wdluya.cn/文档/frc</a><br><a href="http://wdluya.cn/document/rfc?index={&quot;name&quot;:&quot;RFC3986&quot;}" target="_blank" rel="external">http://wdluya.cn/document/rfc?index={&quot;name&quot;:&quot;RFC3986&quot;}</a></p>
+<ul>
+<li>在第一个例子中出现了中文,URL不支持.所以要进行编码</li>
+<li>第二个例子中在query组件中出现了保留字符<code>&quot;</code> <code>:</code>作为组件数据,所以也要进行编码</li>
+</ul>
 
       
     </div>
@@ -262,8 +268,8 @@ uppercase and lowercase l">
 <nav id="article-nav">
   
   
-    <a href="/2016/04/04/ceshi1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ceshi1</div>
+    <a href="/2016/04/04/学习使用Hexo写博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习使用Hexo写博客</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
