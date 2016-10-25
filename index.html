@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -99,7 +99,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -181,22 +181,22 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
           </a>
         </li>
       
@@ -239,8 +239,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/02/CocoaPods/" itemprop="url">
-                  CocoaPods
+                <a class="post-title-link" href="/2016/10/25/CocoaPods/" itemprop="url">
+                  未命名
                 </a>
               
             
@@ -253,30 +253,11 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-02T09:59:25+08:00" content="2016-06-02">
-              2016-06-02
+            <time itemprop="dateCreated" datetime="2016-10-25T15:57:58+08:00" content="2016-10-25">
+              2016-10-25
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/category/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -302,16 +283,28 @@
       
         
           
-            <h3 id="CocoaPods是什么"><a href="#CocoaPods是什么" class="headerlink" title="CocoaPods是什么?"></a>CocoaPods是什么?</h3><p>CocoaPods是为我们的Xcode projects 管理库依赖的工具 。当你的project开发时需要引用第三方库的，你只需将project所依赖的库名添加到一个名为<strong>Podfile</strong>的纯文本文件中。CocoaPods将会获取project所依赖的库的源代码，并把这些库链接到同一个Xcode workspace来构建你的project。</p>
-<h3 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h3><p>CocoaPods是用脚本语言Ruby构建的。macOS默认是安装Ruby环境的，你可以使用系统自带的Ruby环境来安装CocoaPods。</p>
+            <p>layout: ‘[layout]’<br>title: CocoaPos(一)<br>date: 2016-03-01 10:4:24<br>categories:</p>
+<ul>
+<li>技术<h3 id="CocoaPods是什么"><a href="#CocoaPods是什么" class="headerlink" title="CocoaPods是什么?"></a>CocoaPods是什么?</h3>CocoaPods是为我们的Xcode projects 管理库依赖的工具 。当你的project开发时需要引用第三方库的，你只需将project所依赖的库名添加到一个名为<strong>Podfile</strong>的纯文本文件中。CocoaPods将会获取project所依赖的库的源代码，并把这些库链接到同一个Xcode workspace来构建你的project。<h3 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h3>CocoaPods是用脚本语言Ruby构建的。macOS默认是安装Ruby环境的，你可以使用系统自带的Ruby环境来安装CocoaPods。</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
-<p>==注意在执行上面的命令之前,我们需要替换一下ruby的软件源==。ruby官方的软件源是<code>https://rubygems.org/</code>,我们可以通过下面的命令查看当前ruby环境的软件源是什么</p>
+<p>注意在执行上面的命令之前,我们需要替换一下ruby的软件源。ruby官方的软件源是<code>https://rubygems.org/</code>,我们可以通过下面的命令查看当前ruby环境的软件源是什么</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources -l</span><br></pre></td></tr></table></figure>
 <p>因为官方的软件源是被墙，所以我们要替换一下。操作如下：<br>首先删除默认的软件源</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources --remove https://rubygems.org/</span><br></pre></td></tr></table></figure>
 <p>添加<a href="https://ruby-china.org/" target="_blank" rel="external">Ruby China</a>维护的软件源</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources -a https://gems.ruby-china.org/</span><br></pre></td></tr></table></figure>
-<h3 id="更新CocoaPods"><a href="#更新CocoaPods" class="headerlink" title="更新CocoaPods"></a>更新CocoaPods</h3><p>如果你要更新CocoaPods的版本,同安装命令一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem install cocoapods</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注：之前淘宝也维护着RubyGems，但是现在不在维护，所以之前使用淘宝源的，应该替换成Ruby China的。</p>
+</blockquote>
+<p>安装了CocoaPods后，我们还需要执行下面的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod setup</span><br></pre></td></tr></table></figure>
+<p>当执行<code>pod setup</code>时，CocoaPods就创建~/.cocoapods/respos目录，然后从<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="external">GitHub CocoaPods仓库</a>里把所有的Podspec克隆到该目录下（也就是把github上CocoaPods仓库的master分支拷贝下来）。由于拷贝的文件较大（一百多兆），需要稍等会！</p>
+<blockquote>
+<p>what is PodSpec？后面我们后讲到</p>
+</blockquote>
+<h3 id="更新CocoaPods"><a href="#更新CocoaPods" class="headerlink" title="更新CocoaPods"></a>更新CocoaPods</h3><p>如果你要更新CocoaPods的版本,同安装命令一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
 <h3 id="在项目中使用CocoaPods"><a href="#在项目中使用CocoaPods" class="headerlink" title="在项目中使用CocoaPods"></a>在项目中使用CocoaPods</h3><p>在macOS上已经安装了CocoaPods。接下来我们来学习怎么样在Xcode中使用CocoaPods。对于在项目中使用CocoaPods可以按照下面的步骤：</p>
 <ul>
 <li>创建你的Xcode project</li>
@@ -335,7 +328,33 @@ end
 <li>运行 <code>$ pod install</code></li>
 <li>这时候你就会发现你的project目录下面多了一个<strong>MyApp.xcworkspace</strong>文件。然后打开这个文件就可以码你的project了。</li>
 </ul>
-<h3 id="使用pod-install-vs-pod-update"><a href="#使用pod-install-vs-pod-update" class="headerlink" title="使用pod install vs pod update"></a>使用<code>pod install</code> vs <code>pod update</code></h3><p>许多人对什么时候<code>pod install</code> 和 <code>pod update</code>是迷惑的。他们经常在该使用<code>pod install</code>的时候使用了<code>pod update</code>。</p>
+<h3 id="使用pod-install-vs-pod-update"><a href="#使用pod-install-vs-pod-update" class="headerlink" title="使用pod install vs pod update"></a>使用<code>pod install</code> vs <code>pod update</code></h3><p>许多人对什么时候<code>pod install</code> 和 <code>pod update</code>是迷惑的。他们经常在该使用<code>pod install</code>的时候使用了<code>pod update</code>。<br>这张就来讨论一下两者的区别：</p>
+<ul>
+<li>使用<code>pod install</code>是用来安装新的pod到你的project中的。即使你之前已经有<em>Podfile</em>文件并且运行了<code>pod install</code>。因此在已经使用了CocoaPods的项目中，<code>pod install</code>只是向你的project中添加或者删除pod。</li>
+<li>使用<code>pod update [POD_NAME]</code>只是在你需要pods更新到一个新版本的时候</li>
+</ul>
+<blockquote>
+<p>注意：<code>pod install</code>和<code>pod update</code>都不是作用于CocoaPods这个工具软件的安装和更新。而是作用于<em>Podfile</em>文件中描述的pod（就是project所依赖的第三方库）的安装和更新。</p>
+</blockquote>
+<h4 id="pod-install"><a href="#pod-install" class="headerlink" title="pod install"></a><code>pod install</code></h4><p>这个命令在两个时候用：</p>
+<ol>
+<li><p>第一次为你的project安装pod的时候</p>
+</li>
+<li><p>当你再次编辑<em>Podfile</em>，在文件中添加，删除，更新pods的时候</p>
+</li>
+</ol>
+<p> 每次运行<code>pod install</code>的时候，CocoaPods就会为project去下载并安装pods。安装完毕后，CocoaPods会将每个pod的版本信息写入一个名为<em>Podfile.lock</em>的文件中。这个文件记录这每个pod的版本并锁着这些版本pod。</p>
+<p>当运行<code>pod install</code>时，CocoaPods只解决在<em>Podfile.lock</em>中没有记录的pods的依赖问题。</p>
+<ul>
+<li>如果pod在<em>Podfile.lock</em>中记录了，那么CococaPods就会下载Podfile.lock记录的某个版本的pod,不会试图去检查pod是否有可有的新版本。</li>
+<li>如果pod没有在<em>Podfile.lock</em>中记录，CocoaPods将会根据<em>Podfile</em>描述的版本检索相应的pod进行安装</li>
+</ul>
+<h4 id="pod-outdated"><a href="#pod-outdated" class="headerlink" title="pod outdated"></a>pod outdated</h4><p>如果你运行<code>pod outdated</code>,CocoaPods就会罗列出<em>Podfile.lock</em>中所记录pod（也就是当前project已经安装的pods）的新版本。这样你就知道了哪些pods有了新版本，以便于运行<code>pod update $PODNAME</code>来更新项目中的pods。</p>
+<blockquote>
+<p>注：运行<code>pod update $PODNAME</code>来更新pod时，新版pod的版本号必须满足<em>Podfile</em>对pod的设置，例如<code>pod &#39;MyPod&#39;, &#39;~&gt;x.y&#39;</code>。</p>
+</blockquote>
+<h4 id="pod-update"><a href="#pod-update" class="headerlink" title="pod update"></a>pod update</h4><p>当你运行<code>pod update $PODNAME</code>的时候，CocoaPods试图找到名字为PODNAME的pod的新版本进行安装，不会考虑<em>Podfile.lock</em>中锁定的pod的。</p>
+<p>如果运行<code>pod update</code>，那么CocoaPods将会试图更新<em>Podfile</em>中列举所有的pod。</p>
 
           
         
@@ -413,8 +432,8 @@ end
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/category/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
+                  <a href="/category/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -540,8 +559,8 @@ end
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/category/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
+                  <a href="/category/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -659,20 +678,13 @@ end
 
           
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
           
 
         </nav>
@@ -720,7 +732,7 @@ end
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Muse
   </a>
 </div>
 
@@ -785,13 +797,6 @@ end
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
-
-
 
   
 
