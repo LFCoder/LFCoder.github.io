@@ -1,0 +1,606 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="Type-Casting Operatorsswift中定义了四种类型转换操作符分别是:is,as,as!和as?。它们的类型转换的表达式格式分别为：
+espression  is  typeespression  as  typeespression  as!  typeespression  as?  type
+
+is是用来作类型检查的。用来判断左边的espression的值（一个类的实例）是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="只道是寻常">
+<meta property="og:url" content="http://lfcoder.github.io/2016/11/27/swift之类型转换/index.html">
+<meta property="og:site_name" content="只道是寻常">
+<meta property="og:description" content="Type-Casting Operatorsswift中定义了四种类型转换操作符分别是:is,as,as!和as?。它们的类型转换的表达式格式分别为：
+espression  is  typeespression  as  typeespression  as!  typeespression  as?  type
+
+is是用来作类型检查的。用来判断左边的espression的值（一个类的实例）是">
+<meta property="og:updated_time" content="2016-11-27T10:49:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="只道是寻常">
+<meta name="twitter:description" content="Type-Casting Operatorsswift中定义了四种类型转换操作符分别是:is,as,as!和as?。它们的类型转换的表达式格式分别为：
+espression  is  typeespression  as  typeespression  as!  typeespression  as?  type
+
+is是用来作类型检查的。用来判断左边的espression的值（一个类的实例）是">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://lfcoder.github.io/2016/11/27/swift之类型转换/"/>
+
+
+  <title>  | 只道是寻常 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">只道是寻常</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-27T18:49:14+08:00" content="2016-11-27">
+              2016-11-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/27/swift之类型转换/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/swift之类型转换/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="Type-Casting-Operators"><a href="#Type-Casting-Operators" class="headerlink" title="Type-Casting Operators"></a>Type-Casting Operators</h4><p>swift中定义了四种类型转换操作符分别是:<code>is</code>,<code>as</code>,<code>as!</code>和<code>as?</code>。它们的类型转换的表达式格式分别为：</p>
+<p><code>espression</code>  <strong><em>is</em></strong>  <code>type</code><br><code>espression</code>  <strong><em>as</em></strong>  <code>type</code><br><code>espression</code>  <strong><em>as!</em></strong>  <code>type</code><br><code>espression</code>  <strong><em>as?</em></strong>  <code>type</code></p>
+<ul>
+<li><p><strong><em>is</em></strong>是用来作类型检查的。用来判断左边的<code>espression</code>的值（一个类的实例）是否属于右边<code>type</code>的子类。如果属于<code>type</code>的子类，那么返回<code>true</code>，否则返回<code>false</code></p>
+</li>
+<li><p><strong><em>as</em></strong>是向上类型转换（upcasting）。把<code>espression</code>的值的类型向它的父类类型（superType）转换。使用<strong><em>as</em></strong>要保证在编译阶段总是success</p>
+</li>
+<li><p><strong><em>as！</em></strong> 是向下类型转换（downCasting）。<code>espression</code>的值的类型向它的子类类型（subclass）转换。在运行时（runtime）阶段，<strong><em>as！</em></strong> 会强制类型转换，如果类型转换失败，就会产生一个运行时错误</p>
+</li>
+<li><p><strong><em>as？</em></strong> 也是向下类型转换（downCasting）。<code>espression</code>的值的类型向它的子类类型转换。在运行时阶段，<strong><em>as?</em></strong> 如果类型转换成功，<code>espression</code>的值会被包装（wrap）一个可选类型并返回；如果类型转换失败，就会返回<code>nil</code></p>
+</li>
+</ul>
+<h4 id="example-of-as"><a href="#example-of-as" class="headerlink" title="example of as"></a>example of as</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">Int</span>?</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span>?</span><br><span class="line">    <span class="keyword">var</span> dog: <span class="type">SheepDog</span>?</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> colorOfHair: <span class="type">String</span>?</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SheepDog</span>: <span class="title">Dog</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> sheeps: <span class="type">Int</span>?</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="type">Person</span>() <span class="comment">//创建一个Person实例p</span></span><br><span class="line">        </span><br><span class="line">p.dog = <span class="type">SheepDog</span>()</span><br><span class="line">        </span><br><span class="line"><span class="keyword">let</span> d = p.dog <span class="keyword">as</span> <span class="type">Dog</span>?</span><br><span class="line"><span class="comment">/*1. as 把一个SheepDog？转换成一个父类的Dog？类型</span><br><span class="line">  2.同样可以使用let d = p.dog! as Dog进行类型转换</span><br><span class="line">  3.如果我们使用let d = p.dog as? Dog? 或者 let d = p.dog as！Dog?</span><br><span class="line">  来进行转换，Xcode会总是转换成功的报警告！</span><br><span class="line">  注：根据官方文档描述“If casting to the specified type is guaranteed to fail or is guaranteed to succeed, a compile-time error is raised.”。Xcode应该会产生一个编译错误的，但是Xcode却产生了警告</span><br><span class="line">  </span><br><span class="line">  */</span></span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>(d！)<span class="comment">//d的类型是Dog？（编译阶段），但是在运行时还是检查它的真实类型的--SheepDog</span></span><br></pre></td></tr></table></figure>
+<p>根据上面的例子也可以看出，<strong><em>as</em></strong>是用于upcasting，如果upcasting使用了<strong><em>as?</em></strong> 或者 <strong><em>as！</em></strong> Xcode会报⚠️（官方文档说会报错误）！</p>
+<h4 id="example-of-as？and-as"><a href="#example-of-as？and-as" class="headerlink" title="example of as？and as!"></a>example of as？and as!</h4><p>把上面Person类改动一下，其他类不变<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">Int</span>?</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span>?</span><br><span class="line">    <span class="keyword">var</span> dog: <span class="type">Dog</span>?</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="type">Person</span>()</span><br><span class="line"></span><br><span class="line">p.dog = <span class="type">SheepDog</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> d = p.dog <span class="keyword">as</span>? <span class="type">SheepDog</span></span><br><span class="line"><span class="comment">/*1.as？把一个Dog?类型的值转换成它的子类--SheepDog类型，并把这个SheepDog类型</span><br><span class="line">的值包装在一个可选值里面然后返回给d，所以d的类型为SheepDog?*/</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(d!)<span class="comment">/*如果上面的as？类型转换失败，那么对d解包会返回一个nil，</span><br><span class="line">运行报错*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*1.如果把上面let d = p.dog as? SheepDog这行代码替换成let d = p.dog as！SheepDog 那么转换成功后，直接返回一个SheepDog类型的值给d，不会进行可选包装。如果转换失败，则返回nil，运行报错。</span><br><span class="line">2.如果把上面let d = p.dog as? SheepDog这行代码替换成let d = p.dog as SheepDog？或者 d = p.dog！ as SheepDog或者 d = p.dog as SheepDog，都会编译错误！因为as是upcasting，不能用于downcasting*/</span></span><br></pre></td></tr></table></figure></p>
+<p>以上是我对对于swift类型转换的理解，遂形成文字以作记录！如有理解错误之处，请各位给予指教，多谢！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/02/url编码/" rel="next" title="url编码">
+                <i class="fa fa-chevron-left"></i> url编码
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/27/swift之类型转换/"
+           data-title="" data-url="http://lfcoder.github.io/2016/11/27/swift之类型转换/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Wdluya" />
+          <p class="site-author-name" itemprop="name">Wdluya</p>
+          <p class="site-description motion-element" itemprop="description">人之所以痛苦,在于追求错误的东西</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Type-Casting-Operators"><span class="nav-number">1.</span> <span class="nav-text">Type-Casting Operators</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#example-of-as"><span class="nav-number">2.</span> <span class="nav-text">example of as</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#example-of-as？and-as"><span class="nav-number">3.</span> <span class="nav-text">example of as？and as!</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wdluya</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wdluya"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
