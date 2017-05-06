@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Swift之类型转换]]></title>
+    <url>%2F2016%2F06%2F15%2Fswift%E4%B9%8B%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%2F</url>
+    <content type="text"><![CDATA[Type-Casting Operatorsswift中定义了四种类型转换操作符分别是:is(实际是用于类型检查),as,as!和as?。它们的类型转换的表达式格式分别为： espression is typeespression as typeespression as! typeespression as? type is是用来作类型检查的。用来判断左边的espression的值（一个类的实例）是否属于右边type的子类。如果属于type的子类，那么返回true，否则返回false as是向上类型转换（upcasting）。把espression的值的类型向它的父类类型（superType）转换。使用as要保证在编译阶段总是success as！ 是向下类型转换（downCasting）。espression的值的类型向它的子类类型（subclass）转换。在运行时（runtime）阶段，as！ 会强制类型转换，如果类型转换失败，就会产生一个运行时错误 as？ 也是向下类型转换（downCasting）。espression的值的类型向它的子类类型转换。在运行时阶段，as? 如果类型转换成功，espression的值会被包装（wrap）一个可选类型并返回；如果类型转换失败，就会返回nil example of as123456789101112131415161718192021222324252627282930313233class Person&#123; var age: Int? var name: String? var dog: SheepDog? &#125;class Dog&#123; var colorOfHair: String?&#125;class SheepDog: Dog&#123; var sheeps: Int? &#125;let p = Person() //创建一个Person实例p p.dog = SheepDog() let d = p.dog as Dog?/*1. as 把一个SheepDog？转换成一个父类的Dog？类型 2.同样可以使用let d = p.dog! as Dog进行类型转换 3.如果我们使用let d = p.dog as? Dog? 或者 let d = p.dog as！Dog? 来进行转换，Xcode会总是转换成功的报警告！ 注：根据官方文档描述“If casting to the specified type is guaranteed to fail or is guaranteed to succeed, a compile-time error is raised.”。Xcode应该会产生一个编译错误的，但是Xcode却产生了警告 */ print(d！)//d的类型是Dog？（编译阶段），但是在运行时还是检查它的真实类型的--SheepDog 根据上面的例子也可以看出，as是用于upcasting，如果upcasting使用了as? 或者 as！ Xcode会报⚠️（官方文档说会报错误）！ example of as？and as!把上面Person类改动一下，其他类不变123456789101112131415161718192021class Person&#123; var age: Int? var name: String? var dog: Dog? &#125;let p = Person()p.dog = SheepDog()let d = p.dog as? SheepDog/*1.as？把一个Dog?类型的值转换成它的子类--SheepDog类型，并把这个SheepDog类型的值包装在一个可选值里面然后返回给d，所以d的类型为SheepDog?*/print(d!)/*如果上面的as？类型转换失败，那么对d解包会返回一个nil，运行报错*//*1.如果把上面let d = p.dog as? SheepDog这行代码替换成let d = p.dog as！SheepDog 那么转换成功后，直接返回一个SheepDog类型的值给d，不会进行可选包装。如果转换失败，则返回nil，运行报错。2.如果把上面let d = p.dog as? SheepDog这行代码替换成let d = p.dog as SheepDog？或者 d = p.dog！ as SheepDog或者 d = p.dog as SheepDog，都会编译错误！因为as是upcasting，不能用于downcasting*/ 操作符is比较简单,不再举例以上是我对对于swift类型转换的理解，遂形成文字以作记录！如有理解错误之处，请各位给予指教，多谢！]]></content>
+      <categories>
+        <category>swift</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[url编码]]></title>
+    <url>%2F2016%2F06%2F02%2Furl%E7%BC%96%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版， URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？ uppercase and lowercase letters 即大小写字母，a~z 和A~Z decimal digits 即 0~9 hyphen, period, underscore, and tilde 即 - . _ ~四个字符 revserved characters 即保留字符: / ? # [ ] @! $ &amp; &#39; ( ) * + , ; = 保留字符在URL合法字符集中,有一些字符被预留用于特定的作用–用来分割URL组件或者子组件,这些字符就是reversved characters(保留字符)。URL保留字符集上面已给出这里不再赘述。一般的URL通常由scheme，authority，path，query，fragment几个components(组件)组成。例如： 那么: / ? #都是用来分割组件的，不是URL数据(data)的一部分! Percent-EncodingURL支持的合法的字符那么少，如果URL中出现了中文，特殊符号等这些不安全字符怎么办,解决的办法就是Percent-Encoding机制！当代表URL的字符串中出现不合法字符,或者在URL的组件中出现保留字符作为组件数据,那么都需要对这些字符进行Percent-Encoding.例如:http://wdluya.cn/文档/frchttp://wdluya.cn/document/rfc?index={&quot;name&quot;:&quot;RFC3986&quot;} 在第一个例子中出现了中文,URL不支持.所以要进行编码 第二个例子中在query组件中出现了保留字符&quot; :作为组件数据,所以也要进行编码]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[学习使用Hexo写博客]]></title>
+    <url>%2F2016%2F04%2F04%2F%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8Hexo%E5%86%99%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[#Mac搭建Hexo之前写东西都是保存在自己的有道笔记中，后来想搭建自己的博客，也折腾过octopress，但是最后还是使用Hexo，Hexo是一个基于Node.js用于生成博客的框架。 ##安装安装Hexo必备 Node.js Git 安装]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[CocoaPods(一)]]></title>
+    <url>%2F2016%2F03%2F01%2FCocoaPods%2F</url>
+    <content type="text"><![CDATA[CocoaPods是什么?CocoaPods是为我们的Xcode projects 管理库依赖的工具 。当你的project开发时需要引用第三方库的，你只需将project所依赖的库名添加到一个名为Podfile的纯文本文件中。CocoaPods将会获取project所依赖的库的源代码，并把这些库链接到同一个Xcode workspace来构建你的project。 安装CocoaPodsCocoaPods是用脚本语言Ruby构建的。macOS默认是安装Ruby环境的，你可以使用系统自带的Ruby环境来安装CocoaPods。 1$ sudo gem install cocoapods gem是ruby的包管理工具! 如果gem的版本过低在安装cocoapods时会出问题.使用 $sudo gem update –system来更新gem 注意在执行上面的命令之前,我们需要替换一下ruby的软件源。ruby官方的软件源是https://rubygems.org/,我们可以通过下面的命令查看当前ruby环境的软件源是什么 1$ gem sources -l 因为官方的软件源是被墙，所以我们要替换一下。操作如下：首先删除默认的软件源 1$ gem sources --remove https://rubygems.org/ 添加Ruby China维护的软件源 1$ gem sources -a https://gems.ruby-china.org/ 注：之前淘宝也维护着RubyGems，但是现在不在维护，所以之前使用淘宝源的，应该替换成Ruby China的。 安装了CocoaPods后，我们还需要执行下面的命令 1$ pod setup 当执行pod setup时，CocoaPods就创建~/.cocoapods/respos目录，然后从GitHub CocoaPods仓库里把所有的Podspec克隆到该目录下（也就是把github上CocoaPods仓库的master分支拷贝下来）。由于拷贝的文件较大（一百多兆），需要稍等会！ what is PodSpec？后面我们后讲到 更新CocoaPods如果你要更新CocoaPods的版本,同安装命令一样 1$ sudo gem install cocoapods 在项目中使用CocoaPods在macOS上已经安装了CocoaPods。接下来我们来学习怎么样在Xcode中使用CocoaPods。对于在项目中使用CocoaPods可以按照下面的步骤： 创建你的Xcode project 打开终端，使用$ cd命令进入你创建的project根目录 创建一个名为Podfile的文件，对于创建该文件可以使用命令$ pod init 打开Podfile文件，第一行指定平台和支持的版本 platform : ios, &apos;9.0&apos; 为了使用CocoaPods, 你应该声明Xcode project中的哪个Xcode target 和CocoaPods链接。 target &apos;$TATGET_NAME&apos; do end 在Podfile文件中单独一行通过pod &#39;$PODNAME&#39;来添加一个pod target &apos;MyApp&apos; do pod &apos;AFNetworking&apos; end 编辑完了Podfile文件，进行保存。 运行 $ pod install 这时候你就会发现你的project目录下面多了一个MyApp.xcworkspace文件。然后打开这个文件就可以码你的project了。 使用pod install vs pod update许多人对什么时候pod install 和 pod update是迷惑的。他们经常在该使用pod install的时候使用了pod update。这张就来讨论一下两者的区别： 使用pod install是用来安装新的pod到你的project中的。即使你之前已经有Podfile文件并且运行了pod install。因此在已经使用了CocoaPods的项目中，pod install只是向你的project中添加或者删除pod。 使用pod update [POD_NAME]只是在你需要pods更新到一个新版本的时候 注意：pod install和pod update都不是作用于CocoaPods这个工具软件的安装和更新。而是作用于Podfile文件中描述的pod（就是project所依赖的第三方库）的安装和更新。 pod install这个命令在两个时候用： 第一次为你的project安装pod的时候 当你再次编辑Podfile，在文件中添加，删除，更新pods的时候 每次运行pod install的时候，CocoaPods就会为project去下载并安装pods。安装完毕后，CocoaPods会将每个pod的版本信息写入一个名为Podfile.lock的文件中。这个文件记录这每个pod的版本并锁着这些版本pod。 当运行pod install时，CocoaPods只解决在Podfile.lock中没有记录的pods的依赖问题。 如果pod在Podfile.lock中记录了，那么CococaPods就会下载Podfile.lock记录的某个版本的pod,不会试图去检查pod是否有可有的新版本。 如果pod没有在Podfile.lock中记录，CocoaPods将会根据Podfile描述的版本检索相应的pod进行安装 pod outdated如果你运行pod outdated,CocoaPods就会罗列出Podfile.lock中所记录pod（也就是当前project已经安装的pods）的新版本。这样你就知道了哪些pods有了新版本，以便于运行pod update $PODNAME来更新项目中的pods。 注：运行pod update $PODNAME来更新pod时，新版pod的版本号必须满足Podfile对pod的设置，例如pod &#39;MyPod&#39;, &#39;~&gt;x.y&#39;。 pod update当你运行pod update $PODNAME的时候，CocoaPods试图找到名字为PODNAME的pod的新版本进行安装，不会考虑Podfile.lock中锁定的pod的。 如果运行pod update，那么CocoaPods将会试图更新Podfile中列举所有的pod。]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+</search>
