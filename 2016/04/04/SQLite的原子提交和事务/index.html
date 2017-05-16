@@ -112,7 +112,10 @@ sqlite中的锁从单个进程的观点来看，对于该进程来说，数据�
 <meta property="og:image" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/userSpace.png">
 <meta property="og:image" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/flushRollback.png">
 <meta property="og:image" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/exclusive.png">
-<meta property="og:updated_time" content="2017-05-16T07:57:53.000Z">
+<meta property="og:image" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/writeChanges.png">
+<meta property="og:image" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/changetostorage.png">
+<meta property="og:image" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/deleteRollback.png">
+<meta property="og:updated_time" content="2017-05-16T14:07:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLite的原子提交和事务">
 <meta name="twitter:description" content="SQLite是事务性数据库,事务性数据库的一个重要的特性就是原子提交(atomic commit),所谓的原子提交就是:在一个事务中数据库的变化，要么都发生，要么一个也不发生
@@ -412,6 +415,22 @@ sqlite中的锁从单个进程的观点来看，对于该进程来说，数据�
 <li><p>获得独占锁</p>
 <p>在对数据库文件进行修改的之前，我们必须给数据库上一把独占锁（exclusive lock）。其实对于获取独占锁分为两个过程：首先，SQLite获取一个未决锁（pending lock）然后未决锁在升级为独占锁。</p>
 <img src="/2016/04/04/SQLite的原子提交和事务/exclusive.png" alt="exclusive.png" title="">
+</li>
+<li><p>把变化写入数据库文件中</p>
+<p>一旦获得独占锁后，我们就知道没有其他的进程在数据库进行读了，这时候我们把变化写入数据库文件中是安全的，其实这时候我们只是把变化写到了操作系统的磁盘缓存中。</p>
+<img src="/2016/04/04/SQLite的原子提交和事务/writeChanges.png" alt="writeChanges.png" title="">
+</li>
+<li><p>把变化复制到磁盘文件中</p>
+<p>这一步非常重要，就是要把变化从缓存中复制到磁盘文件中。把变化从系统缓存中复制到磁盘是比较慢的一个过程。这一步和第7步占据了整个提交过程的大部分时间。</p>
+<img src="/2016/04/04/SQLite的原子提交和事务/changetostorage.png" alt="changetostorage.png" title="">
+</li>
+<li><p>删除回滚日志</p>
+<p>当变化安全的从缓存中复制到磁盘上以后，回滚日志就会被删除！</p>
+<img src="/2016/04/04/SQLite的原子提交和事务/deleteRollback.png" alt="deleteRollback.png" title="">
+</li>
+<li><p>释放独占锁</p>
+<p>提交过程的最后一步就是释放独占锁，以至其他的进程能开始访问数据库</p>
+
 </li>
 </ol>
 <h4 id="事务控制"><a href="#事务控制" class="headerlink" title="事务控制"></a>事务控制</h4><p>在默认情况下，SQLite3的操作都是在自动提交的模式下，也就是说，一旦对数据库的操作完成就立即会把变化提交！</p>
