@@ -141,7 +141,7 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
+      <div class="header-inner"><div class="site-meta custom-logo">
   
 
   <div class="custom-logo-site-title">
@@ -238,150 +238,6 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/16/ceshi/" itemprop="url">
-                  ceshi
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-05-16T10:20:02+08:00" content="2017-05-16">
-              2017-05-16
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/05/16/ceshi/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/16/ceshi/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h4 id="单个文件的提交"><a href="#单个文件的提交" class="headerlink" title="单个文件的提交"></a>单个文件的提交</h4><ol>
-<li><p><strong>初始状态</strong></p>
-<p>当一个数据库连接被打开的时候，从概念上讲，所示如下图:</p>
-</li>
-</ol>
-<ul>
-<li><p>右边代表存储着数据的磁盘。每个长方形代表着一个<code>sector</code>，蓝色代表着<code>sector</code>存储着的是原始信息。</p>
-<ul>
-<li>中间是操作系统的磁盘缓存。这时候的缓存是冷缓存，简单的说就是让磁盘缓存的<code>sector</code>保存为空。</li>
-<li>左边显示的是正在使用SQLite的进程的用户内存空间</li>
-</ul>
-<p>因为数据库连接仅仅是被打开还没有读取数据，所以用户空间是空的！这时候数据处于未加锁状态。</p>
-<p>​</p>
-<p><img src="/initial.png" alt="initial"></p>
-<p>​</p>
-</li>
-</ul>
-<ol>
-<li><p>获取读锁（acquiring A Read Lock）</p>
-<p>在能够对数据进行写操作之前，进程必须首先要对数据库进行读操作。也就是说哪怕进程只是向数据库中添加数据，那么它也必须先数据库进行读，以至于它能知道怎么解析<code>INSERT</code>语句和新的数据要被存储到数据文件中的位置。</p>
-</li>
-</ol>
-<p>​       当对数据库读的时候，进程就对数据库上了一把锁—-共享锁（share lock）。如果所示共享锁是在操作系统磁盘缓存上而非磁盘数据文件上。</p>
-<p><img src="share.png" alt="share"></p>
-<ol>
-<li><p>从数据中读取信息</p>
-<p>当共享锁获得之后，我们就能从数据库文件中读取数据了。</p>
-<p><img src="readInfo.png" alt="readInfo"></p>
-</li>
-<li><p>获取保留锁</p>
-<p>在对数据库写之前，先要给数据库上一把保留锁（reserved lock）。保留锁意味着：进程不久的将来要对数据库文件进行修改，但是现在还没有开始修改。因为还没开始修改数据库，所以保留锁允许其他进程读数据库。</p>
-<p><img src="reserve.png" alt="reserve"></p>
-</li>
-</ol>
-<ol>
-<li><p>创建回滚日志文件</p>
-<p>获取保留锁后，SQLite会创建一个单独的回滚日志文件，然后把将要改变的内容写到回滚日志文件中。</p>
-</li>
-</ol>
-<p><img src="rollbackFile.png" alt="rollbackFile"></p>
-<ol>
-<li>​</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
     
       
 
@@ -673,7 +529,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/04/sqlite中的锁/" itemprop="url">
+                <a class="post-title-link" href="/2016/04/04/SQLite的原子提交和事务/" itemprop="url">
                   SQLite的原子提交和事务
                 </a>
               
@@ -717,8 +573,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/04/sqlite中的锁/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/04/sqlite中的锁/" itemprop="commentsCount"></span>
+                <a href="/2016/04/04/SQLite的原子提交和事务/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/04/SQLite的原子提交和事务/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -763,63 +619,44 @@
 </li>
 </ul>
 <h4 id="单个文件的提交"><a href="#单个文件的提交" class="headerlink" title="单个文件的提交"></a>单个文件的提交</h4><ol>
-<li><p><strong>初始状态</strong></p>
-<p> 当一个数据库连接被打开的时候，从概念上讲，所示如下图:</p>
-</li>
-</ol>
+<li><p>初始状态</p>
+<p>当一个数据库连接被打开的时候，从概念上讲，所示如下图:</p>
 <ul>
-<li><p>右边代表存储着数据的磁盘。每个长方形代表着一个<code>sector</code>，蓝色代表着<code>sector</code>存储着的是原始信息。</p>
-<ul>
-<li>中间是操作系统的磁盘缓存。这时候的缓存是冷缓存，简单的说就是让磁盘缓存的<code>sector</code>保存为空。</li>
+<li>右边代表存储着数据的磁盘。每个长方形代表着一个sector，蓝色代表着sector存储着的是原始信息。</li>
+<li>中间是操作系统的磁盘缓存。这时候的缓存是冷缓存，简单的说就是让磁盘缓存的sector保存为空。</li>
 <li>左边显示的是正在使用SQLite的进程的用户内存空间</li>
 </ul>
 <p>因为数据库连接仅仅是被打开还没有读取数据，所以用户空间是空的！这时候数据处于未加锁状态。</p>
-<p>​</p>
-<p><img src="initial.png" alt="initial"></p>
-<p>​</p>
+<img src="/2016/04/04/SQLite的原子提交和事务/initial.png" alt="initial.png" title="">
 </li>
-</ul>
-<ol>
-<li><p>获取读锁（acquiring A Read Lock）</p>
-<p>在能够对数据进行写操作之前，进程必须首先要对数据库进行读操作。也就是说哪怕进程只是向数据库中添加数据，那么它也必须先数据库进行读，以至于它能知道怎么解析<code>INSERT</code>语句和新的数据要被存储到数据文件中的位置。</p>
+<li><p>获取读锁</p>
+<p>在能够对数据进行写操作之前，进程必须首先要对数据库进行读操作。也就是说哪怕进程只是向数据库中添加数据，那么它也必须先数据库进行读，以至于它能知道怎么解析INSERT语句和新的数据要被存储到数据文件中的位置。</p>
+<p>当对数据库读的时候，进程就对数据库上了一把锁—-共享锁（share lock）。如果所示共享锁是在操作系统磁盘缓存上而非磁盘数据文件上。</p>
+<img src="/2016/04/04/SQLite的原子提交和事务/share.png" alt="share.png" title="">
 </li>
-</ol>
-<p>​       当对数据库读的时候，进程就对数据库上了一把锁—-共享锁（share lock）。如果所示共享锁是在操作系统磁盘缓存上而非磁盘数据文件上。</p>
-<p><img src="share.png" alt="share"></p>
-<ol>
-<li><p>从数据中读取信息</p>
-<p> 当共享锁获得之后，我们就能从数据库文件中读取数据了。</p>
-<p><img src="readInfo.png" alt="readInfo"></p>
+<li><p>从数据库中读取信息</p>
+<p>当共享锁获得之后，我们就能从数据库文件中读取数据了。</p>
+<img src="/2016/04/04/SQLite的原子提交和事务/readInfo.png" alt="readInfo.png" title="">
 </li>
 <li><p>获取保留锁</p>
 <p>在对数据库写之前，先要给数据库上一把保留锁（reserved lock）。保留锁意味着：进程不久的将来要对数据库文件进行修改，但是现在还没有开始修改。因为还没开始修改数据库，所以保留锁允许其他进程读数据库。</p>
-<p><img src="reserve.png" alt="reserve"></p>
+<img src="/2016/04/04/SQLite的原子提交和事务/reserve.png" alt="reserve.png" title="">
 </li>
-</ol>
-<ol>
 <li><p>创建回滚日志文件</p>
 <p>获取保留锁后，SQLite会创建一个单独的回滚日志文件，然后把将要改变的内容写到回滚日志文件中。</p>
+<img src="/2016/04/04/SQLite的原子提交和事务/rollbackFile.png" alt="rollbackFile.png" title="">
 </li>
-</ol>
-<p><img src="rollbackFile.png" alt="rollbackFile"></p>
-<ol>
 <li><p>在用户内存空间改变数据库的页</p>
 <p>当把将要改变的数据保存到回滚日志文件中后，数据库的页将在用户的内存空间被改变。</p>
-<p><img src="userSpace.png" alt="userSpace"></p>
-<ol>
+<img src="/2016/04/04/SQLite的原子提交和事务/userSpace.png" alt="userSpace.png" title="">
+</li>
 <li><p>把回滚日志文件复制到磁盘</p>
 <p>当数据库的页在用户空间中被改变后，接下来就是要将在操作系统缓存中的日志文件，复制到磁盘上。</p>
+<img src="/2016/04/04/SQLite的原子提交和事务/flushRollback.png" alt="flushRollback.png" title="">
 </li>
-</ol>
-<p>​                                                             <img src="flushRollback.png" alt="flushRollback"></p>
-<ol>
 <li><p>获得独占锁</p>
 <p>在对数据库文件进行修改的之前，我们必须给数据库上一把独占锁（exclusive lock）。其实对于获取独占锁分为两个过程：首先，SQLite获取一个未决锁（pending lock）然后未决锁在升级为独占锁。</p>
-<p>​                                                       <img src="exclusive.png" alt="exclusive"></p>
-</li>
-<li><p>​</p>
-</li>
-</ol>
+<img src="/2016/04/04/SQLite的原子提交和事务/exclusive.png" alt="exclusive.png" title="">
 </li>
 </ol>
 <h4 id="事务控制"><a href="#事务控制" class="headerlink" title="事务控制"></a>事务控制</h4><p>在默认情况下，SQLite3的操作都是在自动提交的模式下，也就是说，一旦对数据库的操作完成就立即会把变化提交！</p>
