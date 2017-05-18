@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="​," />
 
 
 
@@ -89,10 +89,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="CocoaPods(一)">
 <meta property="og:url" content="http://lfcoder.github.io/2016/03/01/CocoaPods/index.html">
-<meta property="og:site_name" content="只道是寻常">
+<meta property="og:site_name" content="Wdluya’Blog">
 <meta property="og:description" content="CocoaPods是什么?CocoaPods是为我们的Xcode projects 管理库依赖的工具 。当你的project开发时需要引用第三方库的，你只需将project所依赖的库名添加到一个名为Podfile的纯文本文件中。CocoaPods将会获取project所依赖的库的源代码，并把这些库链接到同一个Xcode workspace来构建你的project。
 安装CocoaPodsCocoa">
-<meta property="og:updated_time" content="2016-12-01T07:14:10.000Z">
+<meta property="og:updated_time" content="2017-05-17T00:50:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods(一)">
 <meta name="twitter:description" content="CocoaPods是什么?CocoaPods是为我们的Xcode projects 管理库依赖的工具 。当你的project开发时需要引用第三方库的，你只需将project所依赖的库名添加到一个名为Podfile的纯文本文件中。CocoaPods将会获取project所依赖的库的源代码，并把这些库链接到同一个Xcode workspace来构建你的project。
@@ -120,7 +120,7 @@
   <link rel="canonical" href="http://lfcoder.github.io/2016/03/01/CocoaPods/"/>
 
 
-  <title> CocoaPods(一) | 只道是寻常 </title>
+  <title> CocoaPods(一) | Wdluya’Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -149,7 +149,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">只道是寻常</span>
+      <span class="site-title">Wdluya’Blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -287,8 +287,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/category/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/category/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
                   </a>
                 </span>
 
@@ -352,7 +352,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
 <h3 id="在项目中使用CocoaPods"><a href="#在项目中使用CocoaPods" class="headerlink" title="在项目中使用CocoaPods"></a>在项目中使用CocoaPods</h3><p>在macOS上已经安装了CocoaPods。接下来我们来学习怎么样在Xcode中使用CocoaPods。对于在项目中使用CocoaPods可以按照下面的步骤：</p>
 <ul>
-<li>创建你的Xcode project</li>
+<li><p>创建你的Xcode project</p>
+<ul>
 <li>打开终端，使用<code>$ cd</code>命令进入你创建的project根目录</li>
 <li>创建一个名为<em>Podfile</em>的文件，对于创建该文件可以使用命令<code>$ pod init</code></li>
 <li><p>打开Podfile文件，第一行指定平台和支持的版本</p>
@@ -364,14 +365,16 @@
 end
 </code></pre></li>
 <li><p>在Podfile文件中单独一行通过<code>pod &#39;$PODNAME&#39;</code>来添加一个pod</p>
-<pre><code>   target &apos;MyApp&apos; do
-   pod &apos;AFNetworking&apos;
-end
-</code></pre></li>
+<pre><code>target &apos;MyApp&apos; do
+pod &apos;AFNetworking&apos;
+</code></pre><p>  end</p>
+</li>
 <li><p>编辑完了<em>Podfile</em>文件，进行保存。</p>
 </li>
 <li>运行 <code>$ pod install</code></li>
 <li>这时候你就会发现你的project目录下面多了一个<strong>MyApp.xcworkspace</strong>文件。然后打开这个文件就可以码你的project了。</li>
+</ul>
+</li>
 </ul>
 <h3 id="使用pod-install-vs-pod-update"><a href="#使用pod-install-vs-pod-update" class="headerlink" title="使用pod install vs pod update"></a>使用<code>pod install</code> vs <code>pod update</code></h3><p>许多人对什么时候<code>pod install</code> 和 <code>pod update</code>是迷惑的。他们经常在该使用<code>pod install</code>的时候使用了<code>pod update</code>。<br>这张就来讨论一下两者的区别：</p>
 <ul>
@@ -420,6 +423,12 @@ end
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/​/" rel="tag">#​</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
@@ -429,8 +438,8 @@ end
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/04/学习使用Hexo写博客/" rel="prev" title="学习使用Hexo写博客">
-                学习使用Hexo写博客 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/04/SQLite的原子提交和事务/" rel="prev" title="SQLite的原子提交和事务">
+                SQLite的原子提交和事务 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

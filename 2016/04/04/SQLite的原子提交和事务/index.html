@@ -95,7 +95,7 @@ sqlite中的锁从单个进程的观点来看，对于该进程来说，数据�
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLite的原子提交和事务">
 <meta property="og:url" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/index.html">
-<meta property="og:site_name" content="只道是寻常">
+<meta property="og:site_name" content="Wdluya’Blog">
 <meta property="og:description" content="SQLite是事务性数据库,事务性数据库的一个重要的特性就是原子提交(atomic commit),所谓的原子提交就是:在一个事务中数据库的变化，要么都发生，要么一个也不发生
 sqlite中的锁从单个进程的观点来看，对于该进程来说，数据库文件总是处于下面五个锁状态之一
 
@@ -115,7 +115,8 @@ sqlite中的锁从单个进程的观点来看，对于该进程来说，数据�
 <meta property="og:image" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/writeChanges.png">
 <meta property="og:image" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/changetostorage.png">
 <meta property="og:image" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/deleteRollback.png">
-<meta property="og:updated_time" content="2017-05-16T14:07:20.000Z">
+<meta property="og:image" content="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/releaseLock.png">
+<meta property="og:updated_time" content="2017-05-18T14:25:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLite的原子提交和事务">
 <meta name="twitter:description" content="SQLite是事务性数据库,事务性数据库的一个重要的特性就是原子提交(atomic commit),所谓的原子提交就是:在一个事务中数据库的变化，要么都发生，要么一个也不发生
@@ -150,7 +151,7 @@ sqlite中的锁从单个进程的观点来看，对于该进程来说，数据�
   <link rel="canonical" href="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/"/>
 
 
-  <title> SQLite的原子提交和事务 | 只道是寻常 </title>
+  <title> SQLite的原子提交和事务 | Wdluya’Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -179,7 +180,7 @@ sqlite中的锁从单个进程的观点来看，对于该进程来说，数据�
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">只道是寻常</span>
+      <span class="site-title">Wdluya’Blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -430,13 +431,20 @@ sqlite中的锁从单个进程的观点来看，对于该进程来说，数据�
 </li>
 <li><p>释放独占锁</p>
 <p>提交过程的最后一步就是释放独占锁，以至其他的进程能开始访问数据库</p>
-
+<img src="/2016/04/04/SQLite的原子提交和事务/releaseLock.png" alt="releaseLock.png" title="">
 </li>
 </ol>
 <h4 id="事务控制"><a href="#事务控制" class="headerlink" title="事务控制"></a>事务控制</h4><p>在默认情况下，SQLite3的操作都是在自动提交的模式下，也就是说，一旦对数据库的操作完成就立即会把变化提交！</p>
 <p>SQL命令<code>BEGIN TRANSACTION</code>(关键字<code>TRANSACTION</code>是可选的)会使SQLite退出自动提交模式，直到遇到<code>COMMIT</code>命令才会把变化提交.</p>
 <p>SQL命令<code>COMMIT</code>实际上不是真正变化提交到磁盘文件(数据库文件)中，而是让SQLite 重新回到自动提交模式。变化被提交到磁盘文件中的发生——由自动提交模式的逻辑接管。</p>
 <p>当SQL命令<code>COMMIT</code>打开自动提交模式，然后SQL自动提交模式的逻辑试着提交变化但是失败了。这是因为这时候其他的进程对持有数据库一个分享锁（<code>SHARE</code>）</p>
+<p>在自动提交模式下:</p>
+<figure class="highlight sql"><figcaption><span>lite</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//下面是SQLite的伪代码</span><br><span class="line">db = open("foods");</span><br><span class="line">db.exec("<span class="keyword">insert</span> <span class="keyword">into</span> drinks <span class="keyword">name</span> <span class="keyword">values</span> <span class="string">'orange juice'</span><span class="string">");</span><br><span class="line">db.exec("</span><span class="keyword">insert</span> <span class="keyword">into</span> fruits <span class="keyword">name</span> <span class="keyword">values</span> <span class="string">'apple'</span><span class="string">");</span></span><br></pre></td></tr></table></figure>
+<p>每一个<em>insert</em>语句是在一个单独的事务中,所以上面数据库的状态的变化为:</p>
+<p>UNLOCKED —- SHARE—–RESERVED—-PENDING—-EXCLUSIVE—-UNLOCKED —- SHARE—–RESERVED—-PENDING—-EXCLUSIVE。每当一个命令执行完，数据库都会把变化提交。</p>
+<figure class="highlight sql"><figcaption><span>lite</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">db = open("foods");</span><br><span class="line">db.exec("<span class="keyword">BEGIN</span><span class="string">");</span><br><span class="line">db.exec("</span><span class="keyword">insert</span> <span class="keyword">into</span> drinks <span class="keyword">name</span> <span class="keyword">values</span> <span class="string">'orange juice'</span><span class="string">");</span><br><span class="line">db.exec("</span><span class="keyword">insert</span> <span class="keyword">into</span> fruits <span class="keyword">name</span> <span class="keyword">values</span> <span class="string">'apple'</span><span class="string">");</span><br><span class="line">db.exec("</span><span class="keyword">COMMIT</span><span class="string">")</span></span><br></pre></td></tr></table></figure>
+<p>如果使用使用命令<code>BEGIN</code>和<code>COMMIT</code>那么事务的有我们自己来管理：</p>
+<p>UNLOCKED —- SHARE—–RESERVED—-PENDING—-EXCLUSIVE</p>
 
       
     </div>
@@ -468,8 +476,8 @@ sqlite中的锁从单个进程的观点来看，对于该进程来说，数据�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/04/学习使用Hexo写博客/" rel="next" title="学习使用Hexo写博客">
-                <i class="fa fa-chevron-left"></i> 学习使用Hexo写博客
+              <a href="/2016/03/01/CocoaPods/" rel="next" title="CocoaPods(一)">
+                <i class="fa fa-chevron-left"></i> CocoaPods(一)
               </a>
             
           </div>

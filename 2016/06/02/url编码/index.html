@@ -84,23 +84,23 @@
 
 
 
-<meta name="description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版，
+<meta name="description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档RFC3986。当然国内也有把该文档进行翻译的中文版RFC3986中文版，
 URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
 
 uppercase and lowercase le">
 <meta property="og:type" content="article">
 <meta property="og:title" content="url编码">
 <meta property="og:url" content="http://lfcoder.github.io/2016/06/02/url编码/index.html">
-<meta property="og:site_name" content="只道是寻常">
-<meta property="og:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版，
+<meta property="og:site_name" content="Wdluya’Blog">
+<meta property="og:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档RFC3986。当然国内也有把该文档进行翻译的中文版RFC3986中文版，
 URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
 
 uppercase and lowercase le">
 <meta property="og:image" content="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png">
-<meta property="og:updated_time" content="2016-10-25T08:29:37.000Z">
+<meta property="og:updated_time" content="2017-05-17T01:18:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="url编码">
-<meta name="twitter:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档FRC3986。当然国内也有把该文档进行翻译的中文版FRC3986中文版，
+<meta name="twitter:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档RFC3986。当然国内也有把该文档进行翻译的中文版RFC3986中文版，
 URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
 
 uppercase and lowercase le">
@@ -128,7 +128,7 @@ uppercase and lowercase le">
   <link rel="canonical" href="http://lfcoder.github.io/2016/06/02/url编码/"/>
 
 
-  <title> url编码 | 只道是寻常 </title>
+  <title> url编码 | Wdluya’Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +157,7 @@ uppercase and lowercase le">
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">只道是寻常</span>
+      <span class="site-title">Wdluya’Blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -335,13 +335,13 @@ uppercase and lowercase le">
       
 
       
-        <p>最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档<a href="http://www.ietf.org/rfc/rfc3986.txt" target="_blank" rel="external">FRC3986</a>。当然国内也有把该文档进行翻译的中文版<a href="http://wiki.jabbercn.org/RFC3986#.E6.A0.87.E5.87.86.E5.8C.96.E5.92.8C.E6.AF.94.E8.BE.83" target="_blank" rel="external">FRC3986中文版</a>，</p>
+        <p>最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档<a href="http://www.ietf.org/rfc/rfc3986.txt" target="_blank" rel="external">RFC3986</a>。当然国内也有把该文档进行翻译的中文版<a href="http://wiki.jabbercn.org/RFC3986#.E6.A0.87.E5.87.86.E5.8C.96.E5.92.8C.E6.AF.94.E8.BE.83" target="_blank" rel="external">RFC3986中文版</a>，</p>
 <h3 id="URL合法字符"><a href="#URL合法字符" class="headerlink" title="URL合法字符"></a>URL合法字符</h3><p>首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。<br>那么，URL合法字符包含哪些呢？</p>
 <ul>
 <li><em>uppercase and lowercase letters</em> 即大小写字母，<code>a~z</code> 和<code>A~Z</code></li>
 <li><em>decimal digits</em> 即 <code>0~9</code></li>
 <li><em>hyphen, period, underscore, and tilde</em> 即 <code>-</code> <code>.</code> <code>_</code> <code>~</code>四个字符</li>
-<li><em>revserved characters</em> 即保留字符<code>:</code>  <code>/</code>  <code>?</code>  <code>#</code>  <code>[</code>  <code>]</code>  <code>@</code><br><code>!</code>  <code>$</code>  <code>&amp;</code>  <code>&#39;</code>  <code>(</code>  <code>)</code> <code>*</code>  <code>+</code>  <code>,</code>  <code>;</code>  <code>=</code></li>
+<li><em>revserved characters</em> 即保留字符<code>:</code>  <code>/</code>  <code>?</code>  <code>#</code>  <code>[</code>  <code>]</code>  <code>@</code><br> <code>!</code>  <code>$</code>  <code>&amp;</code>  <code>&#39;</code>  <code>(</code>  <code>)</code> <code>*</code>  <code>+</code>  <code>,</code>  <code>;</code>  <code>=</code></li>
 </ul>
 <h3 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h3><p>在URL合法字符集中,有一些字符被预留用于特定的作用–用来分割URL组件或者子组件,这些字符就是<em>reversved characters(保留字符)</em>。URL保留字符集上面已给出这里不再赘述。<br>一般的URL通常由<em>scheme</em>，<em>authority</em>，<em>path</em>，<em>query</em>，<em>fragment</em>几个components(组件)组成。例如：<br>  <img src="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png" alt="Snip20160608_1.png-24.7kB"></p>
 <p>  那么<code>:</code> <code>/</code> <code>?</code> <code>#</code>都是用来分割组件的，不是URL数据(data)的一部分!</p>
