@@ -5,11 +5,17 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
 
 
 
@@ -27,9 +33,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -37,25 +46,34 @@
   
   
   
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
   
 
   
 
   
     
+
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.css.network/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicKaiti:300,300italic,400,400italic,700,700italicCourier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -63,9 +81,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -77,7 +95,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -96,70 +114,88 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: {"display":"remove"},
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://lfcoder.github.io/"/>
 
 
-  <title> Wdluya’Blog </title>
+
+
+
+  <title>Wdluya’Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
-<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
-
-  
-
-
-
-
-
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
 
-  <div class="container one-collumn  
+  <div class="container  
    page-home 
  ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta custom-logo">
-  
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Wdluya’Blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wdluya’Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -170,7 +206,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -180,7 +216,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -190,7 +226,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -217,17 +253,30 @@
   
     <div class="site-search">
       
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
 </div>
+
 
 
     </div>
   
 </nav>
+
+
 
  </div>
     </header>
@@ -242,13 +291,23 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://lfcoder.github.io/2017/05/04/四月/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wdluya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wdluya’Blog">
+    </span>
 
     
       <header class="post-header">
@@ -256,38 +315,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/05/04/四月/" itemprop="url">
-                  四月
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/05/04/四月/" itemprop="url">四月</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-05-04T22:54:03+08:00" content="2017-05-04">
-              2017-05-04
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-04T22:54:03+08:00">
+                2017-05-04
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/category/生活/" itemprop="url" rel="index">
                     <span itemprop="name">生活</span>
                   </a>
@@ -295,7 +358,6 @@
 
                 
                 
-
               
             </span>
           
@@ -303,24 +365,29 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2017/05/04/四月/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/04/四月/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/04/四月/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -330,14 +397,25 @@
       
         
           
-            <hr>
-<!-- 标签别名 -->
-<blockquote class="blockquote-center"><p>一身诗意千寻瀑，万古人间四月天 </p>
-</blockquote>    
-<img src="/2017/05/04/四月/jiepai.JPG" alt="jiepai.JPG" title="">
-<img src="/2017/05/04/四月/hua.jpg" alt="hua.jpg" title="">
           
+
+一身诗意千寻瀑，万古人间四月天 
+    
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/04/四月/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -355,6 +433,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -366,13 +446,23 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://lfcoder.github.io/2016/06/15/swift之类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wdluya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wdluya’Blog">
+    </span>
 
     
       <header class="post-header">
@@ -380,38 +470,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/06/15/swift之类型转换/" itemprop="url">
-                  Swift之类型转换
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/06/15/swift之类型转换/" itemprop="url">Swift之类型转换</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-15T09:59:25+08:00" content="2016-06-15">
-              2016-06-15
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-15T09:59:25+08:00">
+                2016-06-15
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/category/swift/" itemprop="url" rel="index">
                     <span itemprop="name">swift</span>
                   </a>
@@ -419,7 +513,6 @@
 
                 
                 
-
               
             </span>
           
@@ -427,24 +520,29 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/06/15/swift之类型转换/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/15/swift之类型转换/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/15/swift之类型转换/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -454,25 +552,21 @@
       
         
           
-            <h4 id="Type-Casting-Operators"><a href="#Type-Casting-Operators" class="headerlink" title="Type-Casting Operators"></a>Type-Casting Operators</h4><p>swift中定义了四种类型转换操作符分别是:<code>is</code>(实际是用于类型检查),<code>as</code>,<code>as!</code>和<code>as?</code>。它们的类型转换的表达式格式分别为：</p>
-<p><code>espression</code>  <strong><em>is</em></strong>  <code>type</code><br><code>espression</code>  <strong><em>as</em></strong>  <code>type</code><br><code>espression</code>  <strong><em>as!</em></strong>  <code>type</code><br><code>espression</code>  <strong><em>as?</em></strong>  <code>type</code></p>
-<ul>
-<li><p><strong><em>is</em></strong>是用来作类型检查的。用来判断左边的<code>espression</code>的值（一个类的实例）是否属于右边<code>type</code>的子类。如果属于<code>type</code>的子类，那么返回<code>true</code>，否则返回<code>false</code></p>
-</li>
-<li><p><strong><em>as</em></strong>是向上类型转换（upcasting）。把<code>espression</code>的值的类型向它的父类类型（superType）转换。使用<strong><em>as</em></strong>要保证在编译阶段总是success</p>
-</li>
-<li><p><strong><em>as！</em></strong> 是向下类型转换（downCasting）。<code>espression</code>的值的类型向它的子类类型（subclass）转换。在运行时（runtime）阶段，<strong><em>as！</em></strong> 会强制类型转换，如果类型转换失败，就会产生一个运行时错误</p>
-</li>
-<li><p><strong><em>as？</em></strong> 也是向下类型转换（downCasting）。<code>espression</code>的值的类型向它的子类类型转换。在运行时阶段，<strong><em>as?</em></strong> 如果类型转换成功，<code>espression</code>的值会被包装（wrap）一个可选类型并返回；如果类型转换失败，就会返回<code>nil</code></p>
-</li>
-</ul>
-<h4 id="example-of-as"><a href="#example-of-as" class="headerlink" title="example of as"></a>example of as</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">Int</span>?</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span>?</span><br><span class="line">    <span class="keyword">var</span> dog: <span class="type">SheepDog</span>?</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> colorOfHair: <span class="type">String</span>?</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SheepDog</span>: <span class="title">Dog</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> sheeps: <span class="type">Int</span>?</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="type">Person</span>() <span class="comment">//创建一个Person实例p</span></span><br><span class="line">        </span><br><span class="line">p.dog = <span class="type">SheepDog</span>()</span><br><span class="line">        </span><br><span class="line"><span class="keyword">let</span> d = p.dog <span class="keyword">as</span> <span class="type">Dog</span>?</span><br><span class="line"><span class="comment">/*1. as 把一个SheepDog？转换成一个父类的Dog？类型</span><br><span class="line">  2.同样可以使用let d = p.dog! as Dog进行类型转换</span><br><span class="line">  3.如果我们使用let d = p.dog as? Dog? 或者 let d = p.dog as！Dog?</span><br><span class="line">  来进行转换，Xcode会总是转换成功的报警告！</span><br><span class="line">  注：根据官方文档描述“If casting to the specified type is guaranteed to fail or is guaranteed to succeed, a compile-time error is raised.”。Xcode应该会产生一个编译错误的，但是Xcode却产生了警告</span><br><span class="line">  </span><br><span class="line">  */</span></span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>(d！)<span class="comment">//d的类型是Dog？（编译阶段），但是在运行时还是检查它的真实类型的--SheepDog</span></span><br></pre></td></tr></table></figure>
-<p>根据上面的例子也可以看出，<strong><em>as</em></strong>是用于upcasting，如果upcasting使用了<strong><em>as?</em></strong> 或者 <strong><em>as！</em></strong> Xcode会报⚠️（官方文档说会报错误）！</p>
-<h4 id="example-of-as？and-as"><a href="#example-of-as？and-as" class="headerlink" title="example of as？and as!"></a>example of as？and as!</h4><p>把上面Person类改动一下，其他类不变<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">Int</span>?</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span>?</span><br><span class="line">    <span class="keyword">var</span> dog: <span class="type">Dog</span>?</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="type">Person</span>()</span><br><span class="line"></span><br><span class="line">p.dog = <span class="type">SheepDog</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> d = p.dog <span class="keyword">as</span>? <span class="type">SheepDog</span></span><br><span class="line"><span class="comment">/*1.as？把一个Dog?类型的值转换成它的子类--SheepDog类型，并把这个SheepDog类型</span><br><span class="line">的值包装在一个可选值里面然后返回给d，所以d的类型为SheepDog?*/</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(d!)<span class="comment">/*如果上面的as？类型转换失败，那么对d解包会返回一个nil，</span><br><span class="line">运行报错*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*1.如果把上面let d = p.dog as? SheepDog这行代码替换成let d = p.dog as！SheepDog 那么转换成功后，直接返回一个SheepDog类型的值给d，不会进行可选包装。如果转换失败，则返回nil，运行报错。</span><br><span class="line">2.如果把上面let d = p.dog as? SheepDog这行代码替换成let d = p.dog as SheepDog？或者 d = p.dog！ as SheepDog或者 d = p.dog as SheepDog，都会编译错误！因为as是upcasting，不能用于downcasting*/</span></span><br></pre></td></tr></table></figure></p>
-<p>操作符<strong><em>is</em></strong>比较简单,不再举例<br>以上是我对对于swift类型转换的理解，遂形成文字以作记录！如有理解错误之处，请各位给予指教，多谢！</p>
-
-          
+          Type-Casting Operatorsswift中定义了四种类型转换操作符分别是:is(实际是用于类型检查),as,as!和as?。它们的类型转换的表达式格式分别为：
+espression  is  typeespression  as  typeespression  as!  typees
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/06/15/swift之类型转换/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -490,6 +584,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -501,13 +597,23 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://lfcoder.github.io/2016/06/02/url编码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wdluya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wdluya’Blog">
+    </span>
 
     
       <header class="post-header">
@@ -515,38 +621,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/06/02/url编码/" itemprop="url">
-                  url编码
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/06/02/url编码/" itemprop="url">url编码</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-02T09:59:25+08:00" content="2016-06-02">
-              2016-06-02
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-02T09:59:25+08:00">
+                2016-06-02
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/category/技术/" itemprop="url" rel="index">
                     <span itemprop="name">技术</span>
                   </a>
@@ -554,7 +664,6 @@
 
                 
                 
-
               
             </span>
           
@@ -562,24 +671,29 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/06/02/url编码/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/02/url编码/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/02/url编码/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -589,24 +703,21 @@
       
         
           
-            <p>最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档<a href="http://www.ietf.org/rfc/rfc3986.txt" target="_blank" rel="external">RFC3986</a>。当然国内也有把该文档进行翻译的中文版<a href="http://wiki.jabbercn.org/RFC3986#.E6.A0.87.E5.87.86.E5.8C.96.E5.92.8C.E6.AF.94.E8.BE.83" target="_blank" rel="external">RFC3986中文版</a>，</p>
-<h3 id="URL合法字符"><a href="#URL合法字符" class="headerlink" title="URL合法字符"></a>URL合法字符</h3><p>首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。<br>那么，URL合法字符包含哪些呢？</p>
-<ul>
-<li><em>uppercase and lowercase letters</em> 即大小写字母，<code>a~z</code> 和<code>A~Z</code></li>
-<li><em>decimal digits</em> 即 <code>0~9</code></li>
-<li><em>hyphen, period, underscore, and tilde</em> 即 <code>-</code> <code>.</code> <code>_</code> <code>~</code>四个字符</li>
-<li><em>revserved characters</em> 即保留字符<code>:</code>  <code>/</code>  <code>?</code>  <code>#</code>  <code>[</code>  <code>]</code>  <code>@</code><br> <code>!</code>  <code>$</code>  <code>&amp;</code>  <code>&#39;</code>  <code>(</code>  <code>)</code> <code>*</code>  <code>+</code>  <code>,</code>  <code>;</code>  <code>=</code></li>
-</ul>
-<h3 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h3><p>在URL合法字符集中,有一些字符被预留用于特定的作用–用来分割URL组件或者子组件,这些字符就是<em>reversved characters(保留字符)</em>。URL保留字符集上面已给出这里不再赘述。<br>一般的URL通常由<em>scheme</em>，<em>authority</em>，<em>path</em>，<em>query</em>，<em>fragment</em>几个components(组件)组成。例如：<br>  <img src="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png" alt="Snip20160608_1.png-24.7kB"></p>
-<p>  那么<code>:</code> <code>/</code> <code>?</code> <code>#</code>都是用来分割组件的，不是URL数据(data)的一部分!</p>
-<h3 id="Percent-Encoding"><a href="#Percent-Encoding" class="headerlink" title="Percent-Encoding"></a>Percent-Encoding</h3><p>URL支持的合法的字符那么少，如果URL中出现了中文，特殊符号等这些不安全字符怎么办,解决的办法就是Percent-Encoding机制！<br>当代表URL的字符串中出现不合法字符,或者在URL的组件中出现保留字符作为组件数据,那么都需要对这些字符进行Percent-Encoding.<br>例如:<br><a href="http://wdluya.cn/文档/frc" target="_blank" rel="external">http://wdluya.cn/文档/frc</a><br><a href="http://wdluya.cn/document/rfc?index={&quot;name&quot;:&quot;RFC3986&quot;}" target="_blank" rel="external">http://wdluya.cn/document/rfc?index={&quot;name&quot;:&quot;RFC3986&quot;}</a></p>
-<ul>
-<li>在第一个例子中出现了中文,URL不支持.所以要进行编码</li>
-<li>第二个例子中在query组件中出现了保留字符<code>&quot;</code> <code>:</code>作为组件数据,所以也要进行编码</li>
-</ul>
-
-          
+          最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档RFC3986。当然国内也有把该文档进行翻译的中文版RFC3986中文版，
+URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/06/02/url编码/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -624,6 +735,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -635,13 +748,23 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://lfcoder.github.io/2016/04/04/SQLite的原子提交和事务/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wdluya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wdluya’Blog">
+    </span>
 
     
       <header class="post-header">
@@ -649,38 +772,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/04/04/SQLite的原子提交和事务/" itemprop="url">
-                  SQLite的原子提交和事务
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/04/04/SQLite的原子提交和事务/" itemprop="url">SQLite的原子提交和事务</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-04T20:54:03+08:00" content="2016-04-04">
-              2016-04-04
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-04T20:54:03+08:00">
+                2016-04-04
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/category/数据库/" itemprop="url" rel="index">
                     <span itemprop="name">数据库</span>
                   </a>
@@ -688,7 +815,6 @@
 
                 
                 
-
               
             </span>
           
@@ -696,24 +822,29 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/04/04/SQLite的原子提交和事务/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/04/SQLite的原子提交和事务/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/04/SQLite的原子提交和事务/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -723,96 +854,22 @@
       
         
           
-            <p>SQLite是事务性数据库,事务性数据库的一个重要的特性就是<strong>原子提交</strong>(atomic commit),所谓的<strong>原子提交</strong>就是:<strong>在一个事务中数据库的变化，要么都发生，要么一个也不发生</strong></p>
-<h3 id="sqlite中的锁"><a href="#sqlite中的锁" class="headerlink" title="sqlite中的锁"></a>sqlite中的锁</h3><p>从单个进程的观点来看，对于该进程来说，数据库文件总是处于下面五个锁状态之一</p>
-<ul>
-<li><p>未加锁(UNLOCKED)</p>
-<p>在这个状态下,数据库既没有被读也没有被写</p>
-</li>
-<li><p>共享锁(SHARE)</p>
-<p>在共享锁的状态下,数据正在被读但是没有被写。多个进程可以在同一时间对数据库持有共享锁。</p>
-</li>
-<li><p>保留锁(RESERVED)</p>
-<p>一个保留锁意味着———某个进程<strong>将要</strong>对数据库进行写操作，但当前还在对数据库进行读操作。数据库只能有一个保留锁，这个保留所能和多个共享锁共存。也就是说在保留锁的情况下，其他进程可以对数据库读，但是不能尝试对数据库写。</p>
-</li>
-<li><p>未决锁(PENDING)</p>
-<p>未决锁意味着——–对数据库持有未决锁的进程马上要对数据库进行写操作，但是由于其他进程还对数据库进行读操作（也就是其他进程对数据库持有共享锁）,所以该进程要等待其他的进程的共享锁都释放。一旦其他进程的共享锁释放，那么该进程就会拿到独占锁。未决锁和保留锁的区别是：在保留锁的状态下，新的共享锁还能够创建；然而在未决锁状态下，新的共享锁不能被创建了</p>
-</li>
-<li><p>独占锁(EXCLUSIVE)</p>
-<p>为了能够对数据库进行写，独占锁是必须的。只有在独占锁状态下才能对数据库进行写操作，任何锁都不能与独占锁共存。为了最大限度地提高并发性，SQLite最小化了独占锁的持有时间</p>
-</li>
-</ul>
-<h4 id="单个文件的提交"><a href="#单个文件的提交" class="headerlink" title="单个文件的提交"></a>单个文件的提交</h4><ol>
-<li><p>初始状态</p>
-<p>当一个数据库连接被打开的时候，从概念上讲，所示如下图:</p>
-<ul>
-<li>右边代表存储着数据的磁盘。每个长方形代表着一个sector，蓝色代表着sector存储着的是原始信息。</li>
-<li>中间是操作系统的磁盘缓存。这时候的缓存是冷缓存，简单的说就是让磁盘缓存的sector保存为空。</li>
-<li>左边显示的是正在使用SQLite的进程的用户内存空间</li>
-</ul>
-<p>因为数据库连接仅仅是被打开还没有读取数据，所以用户空间是空的！这时候数据处于未加锁状态。</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/initial.png" alt="initial.png" title="">
-</li>
-<li><p>获取读锁</p>
-<p>在能够对数据进行写操作之前，进程必须首先要对数据库进行读操作。也就是说哪怕进程只是向数据库中添加数据，那么它也必须先数据库进行读，以至于它能知道怎么解析INSERT语句和新的数据要被存储到数据文件中的位置。</p>
-<p>当对数据库读的时候，进程就对数据库上了一把锁—-共享锁（share lock）。如果所示共享锁是在操作系统磁盘缓存上而非磁盘数据文件上。</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/share.png" alt="share.png" title="">
-</li>
-<li><p>从数据库中读取信息</p>
-<p>当共享锁获得之后，我们就能从数据库文件中读取数据了。</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/readInfo.png" alt="readInfo.png" title="">
-</li>
-<li><p>获取保留锁</p>
-<p>在对数据库写之前，先要给数据库上一把保留锁（reserved lock）。保留锁意味着：进程不久的将来要对数据库文件进行修改，但是现在还没有开始修改。因为还没开始修改数据库，所以保留锁允许其他进程读数据库。</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/reserve.png" alt="reserve.png" title="">
-</li>
-<li><p>创建回滚日志文件</p>
-<p>获取保留锁后，SQLite会创建一个单独的回滚日志文件，然后把将要改变的内容写到回滚日志文件中。</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/rollbackFile.png" alt="rollbackFile.png" title="">
-</li>
-<li><p>在用户内存空间改变数据库的页</p>
-<p>当把将要改变的数据保存到回滚日志文件中后，数据库的页将在用户的内存空间被改变。</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/userSpace.png" alt="userSpace.png" title="">
-</li>
-<li><p>把回滚日志文件复制到磁盘</p>
-<p>当数据库的页在用户空间中被改变后，接下来就是要将在操作系统缓存中的日志文件，复制到磁盘上。</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/flushRollback.png" alt="flushRollback.png" title="">
-</li>
-<li><p>获得独占锁</p>
-<p>在对数据库文件进行修改的之前，我们必须给数据库上一把独占锁（exclusive lock）。其实对于获取独占锁分为两个过程：首先，SQLite获取一个未决锁（pending lock）然后未决锁在升级为独占锁。</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/exclusive.png" alt="exclusive.png" title="">
-</li>
-<li><p>把变化写入数据库文件中</p>
-<p>一旦获得独占锁后，我们就知道没有其他的进程在数据库进行读了，这时候我们把变化写入数据库文件中是安全的，其实这时候我们只是把变化写到了操作系统的磁盘缓存中。</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/writeChanges.png" alt="writeChanges.png" title="">
-</li>
-<li><p>把变化复制到磁盘文件中</p>
-<p>这一步非常重要，就是要把变化从缓存中复制到磁盘文件中。把变化从系统缓存中复制到磁盘是比较慢的一个过程。这一步和第7步占据了整个提交过程的大部分时间。</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/changetostorage.png" alt="changetostorage.png" title="">
-</li>
-<li><p>删除回滚日志</p>
-<p>当变化安全的从缓存中复制到磁盘上以后，回滚日志就会被删除！</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/deleteRollback.png" alt="deleteRollback.png" title="">
-</li>
-<li><p>释放独占锁</p>
-<p>提交过程的最后一步就是释放独占锁，以至其他的进程能开始访问数据库</p>
-<img src="/2016/04/04/SQLite的原子提交和事务/releaseLock.png" alt="releaseLock.png" title="">
-</li>
-</ol>
-<h4 id="事务控制"><a href="#事务控制" class="headerlink" title="事务控制"></a>事务控制</h4><p>在默认情况下，SQLite3的操作都是在自动提交的模式下，也就是说，一旦对数据库的操作完成就立即会把变化提交！</p>
-<p>SQL命令<code>BEGIN TRANSACTION</code>(关键字<code>TRANSACTION</code>是可选的)会使SQLite退出自动提交模式，直到遇到<code>COMMIT</code>命令才会把变化提交.</p>
-<p>SQL命令<code>COMMIT</code>实际上不是真正变化提交到磁盘文件(数据库文件)中，而是让SQLite 重新回到自动提交模式。变化被提交到磁盘文件中的发生——由自动提交模式的逻辑接管。</p>
-<p>当SQL命令<code>COMMIT</code>打开自动提交模式，然后SQL自动提交模式的逻辑试着提交变化但是失败了。这是因为这时候其他的进程对持有数据库一个分享锁（<code>SHARE</code>）</p>
-<p>在自动提交模式下:</p>
-<figure class="highlight sql"><figcaption><span>lite</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//下面是SQLite的伪代码</span><br><span class="line">db = open("foods");</span><br><span class="line">db.exec("<span class="keyword">insert</span> <span class="keyword">into</span> drinks <span class="keyword">name</span> <span class="keyword">values</span> <span class="string">'orange juice'</span><span class="string">");</span><br><span class="line">db.exec("</span><span class="keyword">insert</span> <span class="keyword">into</span> fruits <span class="keyword">name</span> <span class="keyword">values</span> <span class="string">'apple'</span><span class="string">");</span></span><br></pre></td></tr></table></figure>
-<p>每一个<em>insert</em>语句是在一个单独的事务中,所以上面数据库的状态的变化为:</p>
-<p>UNLOCKED —- SHARE—–RESERVED—-PENDING—-EXCLUSIVE—-UNLOCKED —- SHARE—–RESERVED—-PENDING—-EXCLUSIVE。每当一个命令执行完，数据库都会把变化提交。</p>
-<figure class="highlight sql"><figcaption><span>lite</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">db = open("foods");</span><br><span class="line">db.exec("<span class="keyword">BEGIN</span><span class="string">");</span><br><span class="line">db.exec("</span><span class="keyword">insert</span> <span class="keyword">into</span> drinks <span class="keyword">name</span> <span class="keyword">values</span> <span class="string">'orange juice'</span><span class="string">");</span><br><span class="line">db.exec("</span><span class="keyword">insert</span> <span class="keyword">into</span> fruits <span class="keyword">name</span> <span class="keyword">values</span> <span class="string">'apple'</span><span class="string">");</span><br><span class="line">db.exec("</span><span class="keyword">COMMIT</span><span class="string">")</span></span><br></pre></td></tr></table></figure>
-<p>如果使用使用命令<code>BEGIN</code>和<code>COMMIT</code>那么事务的有我们自己来管理：</p>
-<p>UNLOCKED —- SHARE—–RESERVED—-PENDING—-EXCLUSIVE</p>
-
-          
+          SQLite是事务性数据库,事务性数据库的一个重要的特性就是原子提交(atomic commit),所谓的原子提交就是:在一个事务中数据库的变化，要么都发生，要么一个也不发生。
+要想了解SQLite原子提交的过程，首先必须了解SQLite中的锁
+sqlite中的锁从单个进程的观点来看，对于该进程来说
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/04/SQLite的原子提交和事务/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -825,6 +882,8 @@
     </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -841,13 +900,23 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://lfcoder.github.io/2016/03/01/CocoaPods/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wdluya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wdluya’Blog">
+    </span>
 
     
       <header class="post-header">
@@ -855,38 +924,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/03/01/CocoaPods/" itemprop="url">
-                  CocoaPods(一)
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/03/01/CocoaPods/" itemprop="url">CocoaPods(一)</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-01T10:04:24+08:00" content="2016-03-01">
-              2016-03-01
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-01T10:04:24+08:00">
+                2016-03-01
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/category/iOS/" itemprop="url" rel="index">
                     <span itemprop="name">iOS</span>
                   </a>
@@ -894,7 +967,6 @@
 
                 
                 
-
               
             </span>
           
@@ -902,24 +974,29 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/03/01/CocoaPods/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/01/CocoaPods/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/01/CocoaPods/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -929,85 +1006,20 @@
       
         
           
-            <h3 id="CocoaPods是什么"><a href="#CocoaPods是什么" class="headerlink" title="CocoaPods是什么?"></a>CocoaPods是什么?</h3><p>CocoaPods是为我们的Xcode projects 管理库依赖的工具 。当你的project开发时需要引用第三方库的，你只需将project所依赖的库名添加到一个名为<strong>Podfile</strong>的纯文本文件中。CocoaPods将会获取project所依赖的库的源代码，并把这些库链接到同一个Xcode workspace来构建你的project。</p>
-<h3 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h3><p>CocoaPods是用脚本语言Ruby构建的。macOS默认是安装Ruby环境的，你可以使用系统自带的Ruby环境来安装CocoaPods。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>gem是ruby的包管理工具! 如果gem的版本过低在安装cocoapods时会出问题.<br>使用 <strong>$sudo gem update –system</strong>来更新gem</p>
-</blockquote>
-<p>注意在执行上面的命令之前,我们需要替换一下ruby的软件源。ruby官方的软件源是<code>https://rubygems.org/</code>,我们可以通过下面的命令查看当前ruby环境的软件源是什么</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources -l</span><br></pre></td></tr></table></figure>
-<p>因为官方的软件源是被墙，所以我们要替换一下。操作如下：<br>首先删除默认的软件源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources --remove https://rubygems.org/</span><br></pre></td></tr></table></figure>
-<p>添加<a href="https://ruby-china.org/" target="_blank" rel="external">Ruby China</a>维护的软件源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources -a https://gems.ruby-china.org/</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注：之前淘宝也维护着RubyGems，但是现在不在维护，所以之前使用淘宝源的，应该替换成Ruby China的。</p>
-</blockquote>
-<p>安装了CocoaPods后，我们还需要执行下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod setup</span><br></pre></td></tr></table></figure>
-<p>当执行<code>pod setup</code>时，CocoaPods就创建~/.cocoapods/respos目录，然后从<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="external">GitHub CocoaPods仓库</a>里把所有的Podspec克隆到该目录下（也就是把github上CocoaPods仓库的master分支拷贝下来）。由于拷贝的文件较大（一百多兆），需要稍等会！</p>
-<blockquote>
-<p>what is PodSpec？后面我们后讲到</p>
-</blockquote>
-<h3 id="更新CocoaPods"><a href="#更新CocoaPods" class="headerlink" title="更新CocoaPods"></a>更新CocoaPods</h3><p>如果你要更新CocoaPods的版本,同安装命令一样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
-<h3 id="在项目中使用CocoaPods"><a href="#在项目中使用CocoaPods" class="headerlink" title="在项目中使用CocoaPods"></a>在项目中使用CocoaPods</h3><p>在macOS上已经安装了CocoaPods。接下来我们来学习怎么样在Xcode中使用CocoaPods。对于在项目中使用CocoaPods可以按照下面的步骤：</p>
-<ul>
-<li><p>创建你的Xcode project</p>
-<ul>
-<li>打开终端，使用<code>$ cd</code>命令进入你创建的project根目录</li>
-<li>创建一个名为<em>Podfile</em>的文件，对于创建该文件可以使用命令<code>$ pod init</code></li>
-<li><p>打开Podfile文件，第一行指定平台和支持的版本</p>
-<pre><code>platform : ios, &apos;9.0&apos;
-</code></pre></li>
-<li><p>为了使用CocoaPods, 你应该声明Xcode project中的哪个Xcode target 和CocoaPods链接。</p>
-<pre><code>target &apos;$TATGET_NAME&apos; do
-
-end
-</code></pre></li>
-<li><p>在Podfile文件中单独一行通过<code>pod &#39;$PODNAME&#39;</code>来添加一个pod</p>
-<pre><code>target &apos;MyApp&apos; do
-pod &apos;AFNetworking&apos;
-</code></pre><p>  end</p>
-</li>
-<li><p>编辑完了<em>Podfile</em>文件，进行保存。</p>
-</li>
-<li>运行 <code>$ pod install</code></li>
-<li>这时候你就会发现你的project目录下面多了一个<strong>MyApp.xcworkspace</strong>文件。然后打开这个文件就可以码你的project了。</li>
-</ul>
-</li>
-</ul>
-<h3 id="使用pod-install-vs-pod-update"><a href="#使用pod-install-vs-pod-update" class="headerlink" title="使用pod install vs pod update"></a>使用<code>pod install</code> vs <code>pod update</code></h3><p>许多人对什么时候<code>pod install</code> 和 <code>pod update</code>是迷惑的。他们经常在该使用<code>pod install</code>的时候使用了<code>pod update</code>。<br>这张就来讨论一下两者的区别：</p>
-<ul>
-<li>使用<code>pod install</code>是用来安装新的pod到你的project中的。即使你之前已经有<em>Podfile</em>文件并且运行了<code>pod install</code>。因此在已经使用了CocoaPods的项目中，<code>pod install</code>只是向你的project中添加或者删除pod。</li>
-<li>使用<code>pod update [POD_NAME]</code>只是在你需要pods更新到一个新版本的时候</li>
-</ul>
-<blockquote>
-<p>注意：<code>pod install</code>和<code>pod update</code>都不是作用于CocoaPods这个工具软件的安装和更新。而是作用于<em>Podfile</em>文件中描述的pod（就是project所依赖的第三方库）的安装和更新。</p>
-</blockquote>
-<h4 id="pod-install"><a href="#pod-install" class="headerlink" title="pod install"></a>pod install</h4><p>这个命令在两个时候用：</p>
-<ol>
-<li><p>第一次为你的project安装pod的时候</p>
-</li>
-<li><p>当你再次编辑<em>Podfile</em>，在文件中添加，删除，更新pods的时候</p>
-</li>
-</ol>
-<p> 每次运行<code>pod install</code>的时候，CocoaPods就会为project去下载并安装pods。安装完毕后，CocoaPods会将每个pod的版本信息写入一个名为<em>Podfile.lock</em>的文件中。这个文件记录这每个pod的版本并锁着这些版本pod。</p>
-<p>当运行<code>pod install</code>时，CocoaPods只解决在<em>Podfile.lock</em>中没有记录的pods的依赖问题。</p>
-<ul>
-<li>如果pod在<em>Podfile.lock</em>中记录了，那么CococaPods就会下载Podfile.lock记录的某个版本的pod,不会试图去检查pod是否有可有的新版本。</li>
-<li>如果pod没有在<em>Podfile.lock</em>中记录，CocoaPods将会根据<em>Podfile</em>描述的版本检索相应的pod进行安装</li>
-</ul>
-<h4 id="pod-outdated"><a href="#pod-outdated" class="headerlink" title="pod outdated"></a>pod outdated</h4><p>如果你运行<code>pod outdated</code>,CocoaPods就会罗列出<em>Podfile.lock</em>中所记录pod（也就是当前project已经安装的pods）的新版本。这样你就知道了哪些pods有了新版本，以便于运行<code>pod update $PODNAME</code>来更新项目中的pods。</p>
-<blockquote>
-<p>注：运行<code>pod update $PODNAME</code>来更新pod时，新版pod的版本号必须满足<em>Podfile</em>对pod的设置，例如<code>pod &#39;MyPod&#39;, &#39;~&gt;x.y&#39;</code>。</p>
-</blockquote>
-<h4 id="pod-update"><a href="#pod-update" class="headerlink" title="pod update"></a>pod update</h4><p>当你运行<code>pod update $PODNAME</code>的时候，CocoaPods试图找到名字为PODNAME的pod的新版本进行安装，不会考虑<em>Podfile.lock</em>中锁定的pod的。</p>
-<p>如果运行<code>pod update</code>，那么CocoaPods将会试图更新<em>Podfile</em>中列举所有的pod。</p>
-
-          
+          CocoaPods是什么?CocoaPods是为我们的Xcode projects 管理库依赖的工具 。当你的project开发时需要引用第三方库的，你只需将project所依赖的库名添加到一个名为Podfile的纯文本文件中。CocoaPods将会获取project所依赖的库的源代码，并把这些库链
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/03/01/CocoaPods/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1020,6 +1032,8 @@ pod &apos;AFNetworking&apos;
     </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1046,6 +1060,108 @@ pod &apos;AFNetworking&apos;
 
         </div>
         
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Wdluya" />
+          <p class="site-author-name" itemprop="name">Wdluya</p>
+           
+              <p class="site-description motion-element" itemprop="description">人之所以痛苦,在于追求错误的东西</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://baidu.com/" title="百度" target="_blank">百度</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
       </div>
     </main>
 
@@ -1061,6 +1177,7 @@ pod &apos;AFNetworking&apos;
   <span class="author" itemprop="copyrightHolder">Wdluya</span>
 </div>
 
+
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
@@ -1068,9 +1185,10 @@ pod &apos;AFNetworking&apos;
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
+
 
         
 
@@ -1078,9 +1196,13 @@ pod &apos;AFNetworking&apos;
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -1103,43 +1225,72 @@ pod &apos;AFNetworking&apos;
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
 
 
 
   
   
 
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
   
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
 
 
 
@@ -1164,7 +1315,8 @@ pod &apos;AFNetworking&apos;
 
   
     
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
     <script src="/js/src/hook-duoshuo.js"></script>
   
 
@@ -1173,134 +1325,344 @@ pod &apos;AFNetworking&apos;
 
 
 
+
+
+
+
+
+
+
+
+
+
   
-  
+
   <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
+    var isXml = true;
     // Search DB path;
     var search_path = "search.xml";
-    if (search_path.length == 0) {
-       search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
     }
     var path = "/" + search_path;
     // monitor main search box;
 
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
     }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
     // search function;
     var searchFunc = function(path, search_id, content_id) {
-    'use strict';
-    $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-            // get the contents from search data
-            isfetched = true;
-            $('.popup').detach().appendTo('.header-inner');
-            var datas = $( "entry", xmlResponse ).map(function() {
-                return {
-                    title: $( "title", this ).text(),
-                    content: $("content",this).text(),
-                    url: $( "url" , this).text()
-                };
-            }).get();
-            var $input = document.getElementById(search_id);
-            var $resultContent = document.getElementById(content_id);
-            $input.addEventListener('input', function(){
-                var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                $resultContent.innerHTML = "";
-                if (this.value.trim().length > 1) {
-                // perform local searching
-                datas.forEach(function(data) {
-                    var isMatch = false;
-                    var content_index = [];
-                    var data_title = data.title.trim().toLowerCase();
-                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                    var data_url = data.url;
-                    var index_title = -1;
-                    var index_content = -1;
-                    var first_occur = -1;
-                    // only match artiles with not empty titles and contents
-                    if(data_title != '') {
-                        keywords.forEach(function(keyword, i) {
-                            index_title = data_title.indexOf(keyword);
-                            index_content = data_content.indexOf(keyword);
-                            if( index_title >= 0 || index_content >= 0 ){
-                                isMatch = true;
-								if (i == 0) {
-                                    first_occur = index_content;
-                                }
-                            } 
-							
-                        });
-                    }
-                    // show search results
-                    if (isMatch) {
-                        matchcounts += 1;
-                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                        var content = data.content.trim().replace(/<[^>]+>/g,"");
-                        if (first_occur >= 0) {
-                            // cut out 100 characters
-                            var start = first_occur - 20;
-                            var end = first_occur + 80;
-                            if(start < 0){
-                                start = 0;
-                            }
-                            if(start == 0){
-                                end = 50;
-                            }
-                            if(end > content.length){
-                                end = content.length;
-                            }
-                            var match_content = content.substring(start, end);
-                            // highlight all keywords
-                            keywords.forEach(function(keyword){
-                                var regS = new RegExp(keyword, "gi");
-                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                            });
+      'use strict';
 
-                            str += "<p class=\"search-result\">" + match_content +"...</p>"
-                        }
-                        str += "</li>";
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
                     }
-                })};
-                str += "</ul>";
-                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-                $resultContent.innerHTML = str;
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
             });
-            proceedsearch();
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
         }
-    });}
+      });
+    }
 
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
       e.stopPropagation();
-      if (isfetched == false) {
+      if (isfetched === false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
       } else {
         proceedsearch();
       };
-
     });
 
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
+    $('.popup-btn-close').click(onPopupClose);
     $('.popup').click(function(e){
       e.stopPropagation();
     });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
   </script>
 
+
+
+
+
+  
+
+  
+
+  
 
   
 
