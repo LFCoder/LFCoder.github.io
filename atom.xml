@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wdluya’Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-08-27T09:00:46.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Wdluya</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>内部类</title>
+    <link href="http://yoursite.com/2017/08/27/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+    <id>http://yoursite.com/2017/08/27/内部类/</id>
+    <published>2017-08-27T08:39:30.000Z</published>
+    <updated>2017-08-27T09:00:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h4 id=&quot;内部类的概念和创建&quot;&gt;&lt;a href=&quot;#内部类的概念和创建&quot; class=&quot;headerlink&quot; title=&quot;内部类的概念和创建&quot;&gt;&lt;/a&gt;内部类的概念和创建&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;概念&lt;/strong&gt; ：内部类就是将一个类的定义置于另一
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/category/Java/"/>
+    
+    
+      <category term="Java基础" scheme="http://yoursite.com/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>四月</title>
+    <link href="http://yoursite.com/2017/05/04/%E5%9B%9B%E6%9C%88/"/>
+    <id>http://yoursite.com/2017/05/04/四月/</id>
+    <published>2017-05-04T14:54:03.000Z</published>
+    <updated>2017-05-19T15:03:32.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;!-- 标签别名 --&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;一身诗意千寻瀑，万古人间四月天 &lt;/p&gt;
+&lt;/blockquote&gt;    
+&lt;img src=&quot;/2017/05/04/四月/jiepai.JPG&quot; alt=
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/category/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swift之类型转换</title>
+    <link href="http://yoursite.com/2016/06/15/swift%E4%B9%8B%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://yoursite.com/2016/06/15/swift之类型转换/</id>
+    <published>2016-06-15T01:59:25.000Z</published>
+    <updated>2016-11-28T01:08:14.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;Type-Casting-Operators&quot;&gt;&lt;a href=&quot;#Type-Casting-Operators&quot; class=&quot;headerlink&quot; title=&quot;Type-Casting Operators&quot;&gt;&lt;/a&gt;Type-Casting Operato
+      
+    
+    </summary>
+    
+      <category term="swift" scheme="http://yoursite.com/category/swift/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>url编码</title>
+    <link href="http://yoursite.com/2016/06/02/url%E7%BC%96%E7%A0%81/"/>
+    <id>http://yoursite.com/2016/06/02/url编码/</id>
+    <published>2016-06-02T01:59:25.000Z</published>
+    <updated>2017-05-17T01:18:10.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档&lt;a href=&quot;http://www.ietf.org/rfc/rfc3986.txt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RFC3986&lt;/a&gt;。当然国内也有把该文档进行翻
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/category/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SQLite的原子提交和事务</title>
+    <link href="http://yoursite.com/2016/04/04/SQLite%E7%9A%84%E5%8E%9F%E5%AD%90%E6%8F%90%E4%BA%A4%E5%92%8C%E4%BA%8B%E5%8A%A1/"/>
+    <id>http://yoursite.com/2016/04/04/SQLite的原子提交和事务/</id>
+    <published>2016-04-04T12:54:03.000Z</published>
+    <updated>2017-05-21T01:10:26.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;SQLite是事务性数据库,事务性数据库的一个重要的特性就是&lt;strong&gt;原子提交&lt;/strong&gt;(atomic commit),所谓的&lt;strong&gt;原子提交&lt;/strong&gt;就是:&lt;strong&gt;在一个事务中数据库的变化，要么都发生，要么一个也不发生。&lt;/stron
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://yoursite.com/category/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="SQLite" scheme="http://yoursite.com/tags/SQLite/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CocoaPods(一)</title>
+    <link href="http://yoursite.com/2016/03/01/CocoaPods/"/>
+    <id>http://yoursite.com/2016/03/01/CocoaPods/</id>
+    <published>2016-03-01T02:04:24.000Z</published>
+    <updated>2017-05-17T00:50:42.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;CocoaPods是什么&quot;&gt;&lt;a href=&quot;#CocoaPods是什么&quot; class=&quot;headerlink&quot; title=&quot;CocoaPods是什么?&quot;&gt;&lt;/a&gt;CocoaPods是什么?&lt;/h3&gt;&lt;p&gt;CocoaPods是为我们的Xcode projects
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://yoursite.com/category/iOS/"/>
+    
+    
+      <category term="​" scheme="http://yoursite.com/tags/%E2%80%8B/"/>
+    
+  </entry>
+  
+</feed>
