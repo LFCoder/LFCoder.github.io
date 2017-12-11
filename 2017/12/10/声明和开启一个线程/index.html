@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="并发," />
 
 
 
@@ -88,27 +88,25 @@
 
 
 
-<meta name="description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档RFC3986。当然国内也有把该文档进行翻译的中文版RFC3986中文版，
-URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
+<meta name="description" content="声明和开启一个线程当我们创建一个线程时，必须告诉这个线程将要运行什么代码！有两种方式来实现它：
 
-uppercase and lowercase le">
+提供一个Runnable对象：Runnable是一个接口，接口定义了唯一一个方法run()，这个方法的中代码就是线程要执行的代码。当我们创建一个Thread实例的时候，需要把Runnable对象（实现了该接口的类的实例）作为Thread构造方法的参数。例如：
+12345678910111213141">
 <meta property="og:type" content="article">
-<meta property="og:title" content="url编码">
-<meta property="og:url" content="http://yoursite.com/2016/06/02/url编码/index.html">
+<meta property="og:title" content="Java多线程技术(一)">
+<meta property="og:url" content="http://yoursite.com/2017/12/10/声明和开启一个线程/index.html">
 <meta property="og:site_name" content="Wdluya’Blog">
-<meta property="og:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档RFC3986。当然国内也有把该文档进行翻译的中文版RFC3986中文版，
-URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
+<meta property="og:description" content="声明和开启一个线程当我们创建一个线程时，必须告诉这个线程将要运行什么代码！有两种方式来实现它：
 
-uppercase and lowercase le">
-<meta property="og:image" content="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png">
-<meta property="og:updated_time" content="2017-05-17T01:18:10.000Z">
+提供一个Runnable对象：Runnable是一个接口，接口定义了唯一一个方法run()，这个方法的中代码就是线程要执行的代码。当我们创建一个Thread实例的时候，需要把Runnable对象（实现了该接口的类的实例）作为Thread构造方法的参数。例如：
+12345678910111213141">
+<meta property="og:updated_time" content="2017-12-10T09:50:02.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="url编码">
-<meta name="twitter:description" content="最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档RFC3986。当然国内也有把该文档进行翻译的中文版RFC3986中文版，
-URL合法字符首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。那么，URL合法字符包含哪些呢？
+<meta name="twitter:title" content="Java多线程技术(一)">
+<meta name="twitter:description" content="声明和开启一个线程当我们创建一个线程时，必须告诉这个线程将要运行什么代码！有两种方式来实现它：
 
-uppercase and lowercase le">
-<meta name="twitter:image" content="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png">
+提供一个Runnable对象：Runnable是一个接口，接口定义了唯一一个方法run()，这个方法的中代码就是线程要执行的代码。当我们创建一个Thread实例的时候，需要把Runnable对象（实现了该接口的类的实例）作为Thread构造方法的参数。例如：
+12345678910111213141">
 
 
 
@@ -136,13 +134,13 @@ uppercase and lowercase le">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/02/url编码/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/10/声明和开启一个线程/"/>
 
 
 
 
 
-  <title>url编码 | Wdluya’Blog</title>
+  <title>Java多线程技术(一) | Wdluya’Blog</title>
   
 
 
@@ -293,7 +291,7 @@ uppercase and lowercase le">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/02/url编码/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/10/声明和开启一个线程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wdluya">
@@ -310,7 +308,7 @@ uppercase and lowercase le">
 
         
         
-          <h1 class="post-title" itemprop="name headline">url编码</h1>
+          <h1 class="post-title" itemprop="name headline">Java多线程技术(一)</h1>
         
 
         <div class="post-meta">
@@ -322,8 +320,8 @@ uppercase and lowercase le">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-02T09:59:25+08:00">
-                2016-06-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T17:38:03+08:00">
+                2017-12-10
               </time>
             
 
@@ -345,8 +343,8 @@ uppercase and lowercase le">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/category/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -379,21 +377,73 @@ uppercase and lowercase le">
       
 
       
-        <p>最近两天在研究关于URL编码的问题，如果想要了解这方面知识可以参考文档<a href="http://www.ietf.org/rfc/rfc3986.txt" target="_blank" rel="external">RFC3986</a>。当然国内也有把该文档进行翻译的中文版<a href="http://wiki.jabbercn.org/RFC3986#.E6.A0.87.E5.87.86.E5.8C.96.E5.92.8C.E6.AF.94.E8.BE.83" target="_blank" rel="external">RFC3986中文版</a>，</p>
-<h3 id="URL合法字符"><a href="#URL合法字符" class="headerlink" title="URL合法字符"></a>URL合法字符</h3><p>首先，URL合法字符并不支持所有的字符。其次，URL合法字符也不支持US-ASCII字符集中所有的字符！URL合法字符集只是US-ASCII的一个子集。<br>那么，URL合法字符包含哪些呢？</p>
+        <hr>
+<h3 id="声明和开启一个线程"><a href="#声明和开启一个线程" class="headerlink" title="声明和开启一个线程"></a>声明和开启一个线程</h3><p>当我们创建一个线程时，必须告诉这个线程将要运行什么代码！有两种方式来实现它：</p>
 <ul>
-<li><em>uppercase and lowercase letters</em> 即大小写字母，<code>a~z</code> 和<code>A~Z</code></li>
-<li><em>decimal digits</em> 即 <code>0~9</code></li>
-<li><em>hyphen, period, underscore, and tilde</em> 即 <code>-</code> <code>.</code> <code>_</code> <code>~</code>四个字符</li>
-<li><em>revserved characters</em> 即保留字符<code>:</code>  <code>/</code>  <code>?</code>  <code>#</code>  <code>[</code>  <code>]</code>  <code>@</code><br> <code>!</code>  <code>$</code>  <code>&amp;</code>  <code>&#39;</code>  <code>(</code>  <code>)</code> <code>*</code>  <code>+</code>  <code>,</code>  <code>;</code>  <code>=</code></li>
+<li><p>提供一个<code>Runnable</code>对象：<code>Runnable</code>是一个接口，接口定义了唯一一个方法<code>run()</code>，这个方法的中代码就是线程要执行的代码。当我们创建一个<code>Thread</code>实例的时候，需要把<code>Runnable</code>对象（实现了该接口的类的实例）作为<code>Thread</code>构造方法的参数。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span> <span class="params">()</span></span>&#123;<span class="comment">//新线程要执行的代码</span></span><br><span class="line">      </span><br><span class="line">    System.out.println(<span class="string">"a thread"</span>);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    HelloRunnable rObject = <span class="keyword">new</span> HelloRunnable();<span class="comment">//创建一个Runnable对象</span></span><br><span class="line">    Thread newThread = <span class="keyword">new</span> Thread(rObject);<span class="comment">//创建新线程，把Runnable对象作为Thread构造方法的参数</span></span><br><span class="line">    newThread.start();<span class="comment">//启动新线程</span></span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子类化<code>Thread</code>：<code>Thread</code>类本身实现了<code>Runnable</code>接口，但是<code>Thread</code>类中的<code>run()</code>没有做任何事情。所以你可以创建一个<code>Thread</code>类的子类，提供你自己的<code>run</code>的实现。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    System.out.println(<span class="string">"a thread"</span>);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">      HelloThread newThread = <span class="keyword">new</span> HelloThread();<span class="comment">//创建新线程</span></span><br><span class="line">      newThread.start();<span class="comment">//启动新线程</span></span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h3><p>在URL合法字符集中,有一些字符被预留用于特定的作用–用来分割URL组件或者子组件,这些字符就是<em>reversved characters(保留字符)</em>。URL保留字符集上面已给出这里不再赘述。<br>一般的URL通常由<em>scheme</em>，<em>authority</em>，<em>path</em>，<em>query</em>，<em>fragment</em>几个components(组件)组成。例如：<br>  <img src="http://static.zybuluo.com/Aliluya/qplmsqv2a2miwlsprcd3ipfc/Snip20160608_1.png" alt="Snip20160608_1.png-24.7kB"></p>
-<p>  那么<code>:</code> <code>/</code> <code>?</code> <code>#</code>都是用来分割组件的，不是URL数据(data)的一部分!</p>
-<h3 id="Percent-Encoding"><a href="#Percent-Encoding" class="headerlink" title="Percent-Encoding"></a>Percent-Encoding</h3><p>URL支持的合法的字符那么少，如果URL中出现了中文，特殊符号等这些不安全字符怎么办,解决的办法就是Percent-Encoding机制！<br>当代表URL的字符串中出现不合法字符,或者在URL的组件中出现保留字符作为组件数据,那么都需要对这些字符进行Percent-Encoding.<br>例如:<br><a href="http://wdluya.cn/文档/frc" target="_blank" rel="external">http://wdluya.cn/文档/frc</a><br><a href="http://wdluya.cn/document/rfc?index={&quot;name&quot;:&quot;RFC3986&quot;}" target="_blank" rel="external">http://wdluya.cn/document/rfc?index={&quot;name&quot;:&quot;RFC3986&quot;}</a></p>
+<h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>多个线程的之间的通信主要是通过访问共享数据，例如字段和字段引用的对象，这种通信的方式是极其方便的，但是也可能会产生两中错误—–线程干扰和内存一致性错误。阻止这些错误的工具就是同步（synchronization）。</p>
 <ul>
-<li>在第一个例子中出现了中文,URL不支持.所以要进行编码</li>
-<li>第二个例子中在query组件中出现了保留字符<code>&quot;</code> <code>:</code>作为组件数据,所以也要进行编码</li>
+<li><p>线程干扰（Thread Interference）</p>
+<p>思考下面的这个类<code>Counter</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> c = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        c++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">decrement</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        c--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 在这个类中，每调用一次方法<code>increment()</code>成员变量<code>c</code>就会加1，每调用一次方法<code>decrement()</code>成员变量<code>c</code>就减1。然而，如果一个<code>Counter</code> 对象被多个线程引用，那么这些线程之间的相互干扰可能无法得到预期结果。</p>
+<p>线程干扰（Thread Interference）：当两个运算作用同一个数据，且这个运算在不同的线程上运行。（注：这个两个运算是多个步骤组成的）</p>
+<p>例如：上面代码中的表达式<code>c++</code>，能被分解成3步：</p>
+<ol>
+<li>取出（retrieve）当前<code>c</code>的值</li>
+<li>把取出的值进行加1就算</li>
+<li>把加1计算出的值，储存到<code>c</code>中</li>
+</ol>
+<p>当然表达式<code>c--</code>也会以同样的方式分解。</p>
+<p>如果有一个线程A调用<code>increment</code>，与此同时另个线程B调用<code>decrement</code>。假如<code>c</code>的初始值为0。那么两个方法可能是交叉执行的，其顺序可能是这样的：</p>
+<ol>
+<li>Thread A: 取出<code>c</code>的值</li>
+<li>Thread B: 取出<code>c</code>的值</li>
+<li>Thread A: 对取出的值进行加1运算。结果为 1。</li>
+<li>Thread B: 对取出的值进行减1运算。结果为 -1。</li>
+<li>Thread A: 把计算的结果储存到<code>c</code>中，则<code>c</code>的值为 1。</li>
+<li>Thread B: 把计算的结果储存到<code>c</code>中，则<code>c</code>的值为 -1。</li>
+</ol>
+<p>我们可以看到最终<code>c</code>的值为-1，线程A的结果丢失了，被线程B重写了。上面的情况仅仅是线程干扰的一种可能，在不同的环境下，有可能线程B的结果丢失，也有可能线程没有发生干扰结果正确。由于线程干扰的结果是不可预测的，所以线程干扰导致的bugs是难以侦测和修改的。</p>
+</li>
+<li><p>内存一致性错误（Memory Consistency Errors）</p>
+<p>关于什么是内存一致性错误？形象的一点说就是：当多个线程对同一个数据应该是什么样子持有不同意见（英文原文：<em>Memory consistency errors</em> occur when different threads have inconsistent views of what should be the same data）。内存一致性错误产生的原因是复杂的，超出我们讨论的范围。其实我们没有必要知道产生它的原因，我们只需知道如何避免它的发生就好。</p>
+<p>理解内存一致性错误的关键是理解偏序关系（<em>happens-before</em> relationship），这种关系也保证了一个对内存的写操作的影响对另一个操作是可见的。为了理解它，我们看一个例子，假如有一个<code>int</code>类型的字段<code>counter</code>的声明和初始化如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> counter = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p>这个字段被两个线程A，B共享，如果线程A对<code>counter</code>经行加1操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">counter++;</span><br></pre></td></tr></table></figure>
+<p>线程B来打印<code>counter</code>的值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(counter);</span><br></pre></td></tr></table></figure>
+<p>如果上面的两个语句在同一线程执行，那么输出的值为<code>1</code>。但是两个语句分别在两个线程中执行，那么打印的值可能是<code>0</code>。 因为不能保证线程A对<code>counter</code>的改变对线程B是可见的，除非两个语句建立了偏序关系（简单的理解就是两个语句的执行顺序）</p>
+<p>有许多方法来建立偏序关系，其中之一就是同步（synchronization）。</p>
+</li>
 </ul>
+<h3 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h3><p>​    Java语言提供两种基本的同步语法：同步方法和同步语句。</p>
+<p>​    要使方法同步，只需将同步关键字<code>synchronization</code>添加到方法的声明中即可。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SynchronizedCounter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> c = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        c++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">decrement</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        c--;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">int</span> <span class="title">value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果<code>counter_obj</code>是<code>SynchronizedCounter</code>的一个实例。那么对同步方法的调用会有如下影响。</p>
+<ul>
+<li>如果在一线程中<code>counter_obj</code> 调用了某一同步方法，在另一线程中<code>counter_obj</code>也调用了某一同步方法，那么两个同步方法不可能在两个线程中交替执行（也就是阻止了线程干扰的可能）。只有一个线程中同步方法执行完，另一个线程的同步方法才能执行。因为当线程中<code>counter_obj</code>调用同步方法时，该线程就会得到<code>counter_obj</code>的内部锁（<em>intrinsic lock</em>或者<em>minitor lock</em> ），如果其他线程中<code>counter_obj</code>再调用同步方法时就会等待，直到持有counter_obj内部锁的线程把锁释放掉（即同步方法执行完）</li>
+<li>其次，当一个同步方法存在时，它会自动与同一实例后续的同步方法调用建立偏序关系。这保证对该实例改变对其他线程是可见的。</li>
+</ul>
+<p>需要注意的是构造方法不能声明为同步的，在构造方法的声明上使用<code>synchronization</code>关键字是语法错误。</p>
+<h3 id="同步语句"><a href="#同步语句" class="headerlink" title="同步语句"></a>同步语句</h3><p>上一节我们在讨论同步方法的时候，出现了一个概念内部锁（intrinsic lock）。在讨论同步语句之前，我们来学习一下内部锁和同步的关系。</p>
+<p>其实同步是建立在一个名为内部锁（intrinsic lock ），也叫监视器锁（minitor lock），在API文档中也称之为监视器（minitor）。<strong>每一个实例都一个与之关联的内部锁</strong>。 当一个线程想要单独的访问某实例的字段时，线程不得不先要获得这个实例的内部锁，线程完成操作后就会释放内部锁。在线程获得内部锁和线程释放内部锁这段期间内，我们称之为线程持有内部锁。只要一线程持有某实例的内部锁，试图获得这个内部锁的其他线程那么就会阻塞。也就是同一时刻只能有一个线程持有同一内部锁。</p>
+<p>当同步方法在线程执行时，线程就会自动的获得同步方法调用者的内部锁。同步方法返回后（也就是方法执行完毕）线程释放内部锁。你可能会有疑惑一个静态（static）的同步方法被调用将会发生什么，因为静态方法的调用者是类，而不是一个实例。因为每个类其实就是<code>Class</code>类的一个实例，因此每个类中也有与之相关的内部锁，当调用静态同步方法的时候，线程会自动获得当前类的内部锁。</p>
+<p>下面我们看看同步语句的语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span>(<span class="keyword">this</span>) &#123;</span><br><span class="line">        lastName = name;</span><br><span class="line">        nameCount++;</span><br><span class="line">    &#125;</span><br><span class="line">    nameList.add(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中我们能看到，首先，与同步方法不同，同步语句必须指定提供内部锁的实例。其次，<code>addName</code> 方法同步 改变<code>lastName</code>和<code>nameCount</code>，又避免了同步调用其他实例方法，这里的“其他实例方法的调用”指的是<code>nameList.add(name)</code>，因为在同步代码中调用其他实例的方法可能产生被称为<code>liveness</code>的问题（以后我们会讨论这个问题）。所以同步在并发时能够实现更细粒度的同步。</p>
+<p>下面我们再看一个例子 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MsLunch</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">long</span> c1 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">long</span> c2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> Object lock1 = <span class="keyword">new</span> Object();</span><br><span class="line">    <span class="keyword">private</span> Object lock2 = <span class="keyword">new</span> Object();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inc1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span>(lock1) &#123;</span><br><span class="line">            c1++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inc2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span>(lock2) &#123;</span><br><span class="line">            c2++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>类MsLunch有两个个字段C1和C2，它们永远不会同时使用。这些字段的所有更新必须同步，但允许他们更新时能够交错执行。我们就可以像例子那样，使用两个对象提供锁，以代替同步方法和使用<code>this</code>的同步语句。这样减少了不必要的阻塞增加了并发性。</p>
+<h3 id="可重入同步"><a href="#可重入同步" class="headerlink" title="可重入同步"></a>可重入同步</h3><p>通过前面的学习我们知道，一个线程不能获得以被其他线程持有的内部锁，但是一个线程能够再次获得自已已持有的锁。也就是说同一线程可以多次获得同一把内部锁，这保证可重入同步。留一个思考，想想下面的描述的场景如果不支持可重入同步将会发生什么现象？——–当同步代码中直接或者间接的调用了一个方法，而这个方法也有同步代码，并且这两个同步代码使用的是同一把锁。</p>
+<p>本文简单介绍了Java语言怎么声明和开启一个线程，以及同步的相关基础知识。有关多线程的技术下次再写！</p>
 
       
     </div>
@@ -443,7 +493,7 @@ uppercase and lowercase le">
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2016/06/02/url编码/" title="url编码">http://yoursite.com/2016/06/02/url编码/</a>
+      <a href="http://yoursite.com/2017/12/10/声明和开启一个线程/" title="Java多线程技术(一)">http://yoursite.com/2017/12/10/声明和开启一个线程/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -457,6 +507,12 @@ uppercase and lowercase le">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/并发/" rel="tag"># 并发</a>
+          
+        </div>
+      
 
       
       
@@ -466,8 +522,8 @@ uppercase and lowercase le">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/04/SQLite的原子提交和事务/" rel="next" title="SQLite的原子提交和事务">
-                <i class="fa fa-chevron-left"></i> SQLite的原子提交和事务
+              <a href="/2017/08/27/内部类/" rel="next" title="内部类">
+                <i class="fa fa-chevron-left"></i> 内部类
               </a>
             
           </div>
@@ -475,10 +531,6 @@ uppercase and lowercase le">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/15/swift之类型转换/" rel="prev" title="Swift之类型转换">
-                Swift之类型转换 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -630,7 +682,7 @@ uppercase and lowercase le">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#URL合法字符"><span class="nav-number">1.</span> <span class="nav-text">URL合法字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保留字符"><span class="nav-number">2.</span> <span class="nav-text">保留字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Percent-Encoding"><span class="nav-number">3.</span> <span class="nav-text">Percent-Encoding</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明和开启一个线程"><span class="nav-number">1.</span> <span class="nav-text">声明和开启一个线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步"><span class="nav-number">2.</span> <span class="nav-text">同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步方法"><span class="nav-number">3.</span> <span class="nav-text">同步方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步语句"><span class="nav-number">4.</span> <span class="nav-text">同步语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可重入同步"><span class="nav-number">5.</span> <span class="nav-text">可重入同步</span></a></li></ol></div>
             
 
           </div>

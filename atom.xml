@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-27T09:00:46.000Z</updated>
+  <updated>2017-12-10T09:50:02.613Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java多线程技术(一)</title>
+    <link href="http://yoursite.com/2017/12/10/%E5%A3%B0%E6%98%8E%E5%92%8C%E5%BC%80%E5%90%AF%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://yoursite.com/2017/12/10/声明和开启一个线程/</id>
+    <published>2017-12-10T09:38:03.000Z</published>
+    <updated>2017-12-10T09:50:02.613Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h3 id=&quot;声明和开启一个线程&quot;&gt;&lt;a href=&quot;#声明和开启一个线程&quot; class=&quot;headerlink&quot; title=&quot;声明和开启一个线程&quot;&gt;&lt;/a&gt;声明和开启一个线程&lt;/h3&gt;&lt;p&gt;当我们创建一个线程时，必须告诉这个线程将要运行什么代码！有两种方式来实现它
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/category/Java/"/>
+    
+    
+      <category term="并发" scheme="http://yoursite.com/tags/%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>内部类</title>
